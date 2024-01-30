@@ -1,0 +1,3 @@
+export const jwtConstants = {
+    secret: 'SISTEMA DE ALUMNOS PARA LA SECUNDARIA FEDERAL MOISES SAENZ DE TANGAMANDAPIO'
+}

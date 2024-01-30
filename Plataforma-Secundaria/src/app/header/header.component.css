@@ -1,0 +1,93 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: var(--colorBlanco);
+}
+
+header{
+    /* background-color: rgba(232, 195, 158, 0.295); */
+    width: 100%;
+    /* height: auto; */
+    height: 12vh;
+    /* box-shadow: 1px 1px 3px rgba(150, 150, 150, 0.541); */
+    /* box-shadow: 1px 1px 3px rgba(255, 255, 255, 0.541); */
+    /* box-shadow: 1px 1px 3px #6a041acc; */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    z-index: 10;
+    position: fixed;
+    transition: all .8s ease;
+    font-family: 'Work Sans', sans-serif;
+}
+
+/*-----clase que se agrega con ts al header al hacer scroll-----*/
+.sticky{
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(5px);
+    box-shadow: 0px 2px 10px 2px var(--colorCopy);
+}
+.sticky2, .sticky2 a{
+    color: var(--colorCopy);
+    font-weight: bold;
+}
+.sticky2 .main-menu #item a:hover{
+    /* color: black; */
+    color: var(--colorCopy);
+    box-shadow: 0px 2px 0px 0px var(--colorCopy);
+    transition: all 0.3s ease;
+}
+/* ------------------------------------------ */
+header h1, a{
+    /* font-family: 'Roboto', sans-serif; */
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 600;
+}
+header h1{
+    font-size: 2rem;
+}
+.logo picture{
+    display: flex;
+    align-items: center;
+}
+.logo picture img{
+    width: 70px;
+    padding: 5px 0;
+}
+.logo picture h1{
+    margin-left: 15px;
+}
+
+/* ------------------------------------------ */
+nav .main-menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+nav .main-menu a{
+    text-decoration: none;
+    padding: 5px 8px;
+    font-weight: 600;
+    font-size: large;
+}
+nav .main-menu #item{
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.main-menu #item a:hover{
+    color: white;
+    box-shadow: 0px 2px 0px 0px rgb(255, 255, 255);
+    transition: all 0.3s ease;
+}
+
+/* .logout{
+    display: none;
+} */
+
+/* .sticky2 .main-menu #item:nth-child(n):last-child{
+    color: var(--colorBlanco);
+    background-color: var(--colorCopy);
+} */

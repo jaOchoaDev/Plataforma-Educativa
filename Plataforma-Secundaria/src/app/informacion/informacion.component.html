@@ -1,0 +1,43 @@
+<!-- <div class="info">
+  
+  <c-carousel (itemChange)="onItemChange($event)" [interval]="4000" transition="crossfade">
+    <c-carousel-inner>
+      <c-carousel-item *ngFor="let slide of slides">
+        <img
+          [src]="slide.src"
+          alt="{{slide.title}}"
+          class="d-block w-100"
+          loading="lazy"
+        />
+      </c-carousel-item>
+    </c-carousel-inner>
+  </c-carousel>
+
+</div> -->
+
+
+<div id="carouselExampleInterval" class="carousel slide patern" data-bs-ride="carousel">
+
+  <div class="carousel-inner content-img">
+    <div class="carousel-item active div-img" data-bs-interval="4000">
+      <img src="../../assets/info1/1.png" class="d-block w-100" alt="...">
+    </div>
+
+    <div class="carousel-item" data-bs-interval="4000">
+      <img src="../../assets/info1/2.png" class="d-block w-100" alt="...">
+    </div>
+
+    <div class="carousel-item" data-bs-interval="4000">
+      <img src="../../assets/info1/3.png" class="d-block w-100" alt="...">
+    </div>
+  </div>
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>

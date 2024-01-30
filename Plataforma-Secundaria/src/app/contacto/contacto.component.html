@@ -1,0 +1,40 @@
+<div class="container">
+    <h2>CONTÁCTANOS</h2>
+    <form (ngSubmit)="onSubmit()" [formGroup]="contactForm">
+    
+        <div class="form">
+            <label for="nombre">Nombre</label>
+            <input class="input inp" name="nombre" id="nombre" autocomplete="false" placeholder="Escribe tu nombre aquí" type="text" formControlName="nombre" autocomplete="off">
+            <div class="alerta alert alert-danger" *ngIf="contactForm.get('nombre')?.errors?.['required']">Nombre requerido</div>
+            <div class="alerta alert alert-danger" *ngIf="contactForm.get('nombre')?.errors?.['maxlength']">Nombre muy largo</div>
+        </div>
+    
+        <div class="form">
+            <label for="email">Correo</label>
+            <input class="input inp" name="email" id="email" autocomplete="false" placeholder="Escribe tu correo aquí" type="text" formControlName="email" autocomplete="off">
+            <div class="alerta alert alert-danger" *ngIf="contactForm.get('email')?.touched && contactForm.get('email')?.errors?.['required']">Correo requerido</div>
+            <div class="alerta alert alert-danger" *ngIf="contactForm.get('email')?.errors?.['email']">Correo No Valido</div>
+        </div>
+    
+        <div class="form">
+            <label for="asunto">Asunto</label>
+            <input class="input inp" name="asunto" id="asunto" placeholder="Escribe el asunto aquí" type="text" formControlName="asunto" autocomplete="off">
+            <div class="alerta alert alert-danger" *ngIf="contactForm.get('asunto')?.touched && contactForm.get('asunto')?.errors?.['required']">Asunto requerido</div>
+            <div class="alerta alert alert-danger" *ngIf="contactForm.get('asunto')?.errors?.['maxlength']">Asunto muy largo</div>
+        </div>
+    
+        <div class="form">
+            <label for="mensaje">Mensaje</label>
+            <textarea  name="mensaje" id="mensaje" cols="30" rows="5" class="input inp"
+            placeholder="Escribe tu mensaje aquí" formControlName="mensaje" formControlName="mensaje"></textarea>
+            <div class="alerta alert alert-danger" *ngIf="contactForm.get('contraseña')?.touched && contactForm.get('mensaje')?.errors?.['required']">Mensaje requerido</div>
+            <div class="alerta alert alert-danger" *ngIf="contactForm.get('mensaje')?.errors?.['maxlength']">Mensaje muy largo</div>
+        </div>
+    
+        <div>
+            <button class="btn" [disabled]="contactForm.invalid">Enviar</button>
+        </div>
+    
+    </form>
+
+</div>

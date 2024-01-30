@@ -1,0 +1,123 @@
+.container{
+    font-family: 'Work Sans', sans-serif;
+    /* height: 70vh; */
+}
+
+h2{
+    padding-left: 1rem;
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: var(--colorCopy);
+}
+
+form{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    /* align-items: flex-start; */
+    /* justify-content: left; */
+    margin-left: 3rem;
+    color: var(--colorTexto);
+}
+/* form input, textarea{
+    border-bottom: 1px solid #2f00ff;
+} */
+textarea{
+    resize: none;
+}
+form div{
+    display: flex;
+    flex-direction: column;
+    padding: .5rem;
+    /* border: 1px solid cyan; */
+}
+form label{
+    color: var(--colorTexto);
+    font-weight: 400;
+}
+
+.btn{
+    width: 11rem;
+    height: 2rem;
+    border-radius: 0;
+    background-color: var(--colorGris);
+    /* border-bottom: 1px solid #80808069; */
+    /* border: 1px solid var(--border-before-color); */
+    border: 1px solid #80808069;
+    color: var(--colorTexto); /*color de letra*/
+    cursor: pointer;
+}
+.btn:hover{
+    /* background-color: #ffffff86; */
+    /* border-bottom: 1px solid #860722; */
+    background-color: var(--colorCopy);
+    color: var(--colorBlanco);
+}
+
+/* ---------------------------------------- */
+.form {
+    /* --width-of-input: 200px; */
+    --width-of-input: 20rem;
+    --border-height: 1px;
+    --border-before-color: #80808069;
+    --input-hovered-color: #ffffff86;
+    position: relative;
+    /* width: var(--width-of-input); */
+    width: 90%;
+}
+/* estilo inicial*/
+.form .input {
+    color: #303030;
+    font-size: 0.9rem;
+    background-color: var(--colorGris);
+    width: 100%;
+    box-sizing: border-box;
+    padding-inline: 0.5em;
+    padding-block: 0.7em;
+    border: none;
+    border-bottom: 1px solid var(--colorCopy);
+    /* border: 1px solid var(--border-before-color); */
+}
+.form input{
+    height: 2rem;
+}
+
+/* Hover de Input */
+.form .input:hover{
+background-color: var(--input-hovered-color);
+border-bottom: 1px solid var(--colorCopy);
+}
+
+input:focus,
+textarea:hover {
+    outline: none;
+}
+
+/* aquí está el código de borde animado */
+input:focus~.input-border,
+textarea:focus~.input-border {
+    width: 100%;
+}
+
+.inp:focus{
+    border-bottom: 1px solid var(--colorCopy);
+
+    /* width: auto;
+    height: 40px;
+    padding: 0 0 0 40px;
+    outline: none;
+    border: none;
+    filter: drop-shadow(0px 1px 0px var(--colorCard)) drop-shadow(0px 1px 0px var(--colorCard)); */
+}
+
+.alerta{
+    /* height: auto; */
+    height: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    font-weight: 600;
+    font-size: x-small;
+}

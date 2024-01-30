@@ -1,0 +1,143 @@
+.layout{
+    width: 100%;
+    height: auto;
+    font-family: 'Work Sans', sans-serif;
+}
+/* ----------------------------------------------------------------------- */
+.container1{
+    width: 100%;
+    height: 100vh;
+    background-color: beige;
+    background-image: linear-gradient(rgba(27, 27, 27, 0.7),rgba(27, 27, 27, 0.7)), url(../../assets/img/salon.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* filter: blur(2px); */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 2fr 1fr;
+    /* gap: 2rem; */
+    justify-items: center;
+    align-items: center;
+    color: var(--colorBlanco);
+}
+.cont1{
+    grid-column: span 2;
+    margin-top: -15rem;
+    color: var(--colorBlanco);
+    margin-bottom: 2rem;
+}
+.cont1 h2{
+    font-weight: 600;
+    font-size: 3rem;
+    line-height: 1;
+    text-align: center;
+}
+.cont2{
+    grid-area: 2/1/3/2;
+    margin-top: -25rem;
+    /* box-shadow:  15px 15px 30px var(--sombra),
+             -15px -15px 30px rgba(0, 0, 0, 0.8); */
+}
+.cont3{
+    grid-area: 2/2/3/3;
+    margin-top: -25rem;
+    /* box-shadow:  15px 15px 30px var(--sombra),
+             -15px -15px 30px rgba(0, 0, 0, 0.8); */
+}
+
+.div{
+    width: 30vw;
+    height: 60vh;
+    background-color: rgba(255, 255, 255, 0.6);
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); */
+    /* border-radius: 6px; */
+    padding: 2rem;
+    text-align: justify;
+}
+.div h3{
+    font-weight: 600;
+    font-size: 2em;
+    text-align: center;
+    color: var(--colorTexto);
+    padding-bottom: 1rem;
+}
+.div p{
+    font-weight: 600;
+    color: var(--colorTexto);
+}
+/* ----------------------------------------------------------------------- */
+.container2{
+    width: 100%;
+    height: 90vh;
+}
+
+.tit{
+    padding: 1rem 5rem;
+    margin: 4rem 2rem;
+}
+.tit h2{
+    /* font-weight: 600;
+    font-size: 2rem; */
+
+    font-weight: 600;
+    font-size: 3rem;
+    line-height: 1;
+    text-align: center;
+}
+
+/* ----------------------------------------------------------------------- */
+.container3{
+    background-image: linear-gradient(rgba(27, 27, 27, 0.7),rgba(27, 27, 27, 0.7)), url(../../assets/img/patio.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    /* height: 90vh; */
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 6rem;
+}
+
+.titulo{
+    /* padding: 1rem 5rem; */
+    /* margin: 4rem 2rem; */
+    margin: 4rem 0 3rem 0;
+}
+.titulo h2{
+    /* font-weight: 600;
+    font-size: 2rem;
+     */
+    color: var(--colorBlanco);
+    font-weight: 600;
+    font-size: 3rem;
+    line-height: 1;
+    text-align: center;
+}
+
+.historia{
+    width: 75vw;
+    /* height: 55vh; */
+    height: auto;
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 2rem 3rem 3rem 3rem;
+    
+}
+.historia h3{
+    font-weight: 600;
+    font-size: 2em;
+    text-align: center;
+    color: var(--colorTexto);
+    padding-bottom: 1rem;
+}
+.historia p{
+    font-weight: 600;
+    text-align: justify;
+    color: var(--colorTexto);
+    font-size: medium;
+    line-height: 1.5;
+}

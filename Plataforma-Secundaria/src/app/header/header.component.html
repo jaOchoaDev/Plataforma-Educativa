@@ -1,0 +1,29 @@
+<header id="inicio" [ngClass]="{'sticky': addClass}">
+    <div class="logo">
+        <picture>
+            <a href=""><span><img src="../../assets/img/logo.ico" alt="Secundaria Moises Saenz"></span></a>            
+            <h1 [ngClass]="{'sticky2': addClass}">Moisés Sáenz</h1>
+        </picture>
+    </div>
+    <div class="nav-bar" [ngClass]="{'sticky2': addClass}">
+        <nav>
+            <ul class="main-menu">
+                <li id="item"><a routerLink="">INICIO</a></li>
+                    <!-- este es de prueba-->
+                <li id="item"><a routerLink="Alumnos">ALUMNOS</a></li> 
+                    <!-- este es el bueno-->
+                <!-- <li id="item"><a (click)="openDialogAlumno()">ALUMNOS</a></li>  -->
+
+                <li id="item"><a (click)="openDialogProfesor()">PROFESORES</a></li>
+
+                <li id="item"><a routerLink="Escuela">ESCUELA</a></li>
+
+                <!-- Usando fragmentos de URL(no funciona) -->
+                <!-- <li id="item"><a routerLink="/#Footer">CONTACTO</a></li> -->
+                <li id="item"><a routerLink="Contactanos">CONTACTO</a></li>
+                <!-- //Botón para hacer logout -->
+                <!-- <li id="item"><a class="logout">CERRAR SESIÓN</a></li> -->
+            </ul>
+        </nav>
+    </div>
+</header>

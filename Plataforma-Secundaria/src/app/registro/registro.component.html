@@ -1,0 +1,242 @@
+<div class="parent">
+  <!-- <img src="../../assets/img/patio.jpg" alt=""> -->
+  <div class="fondo"></div>
+
+  <form (ngSubmit)="onSubmit()" class="form_container" [formGroup]="registerForm">
+
+    <h3>Bienvenido Alumno<br>Crea Tu Nueva Cuenta</h3>
+
+    <div class="grid">
+
+      <!-- Nombre -->
+      <div class="input_container">
+        <label class="input_label" for="nombre">Nombre</label>
+        <!-- <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+                <circle cx="9" cy="9" r="2" stroke="#1C274C" stroke-width="1.5"></circle>
+                <path
+                    d="M13 15C13 16.1046 13 17 9 17C5 17 5 16.1046 5 15C5 13.8954 6.79086 13 9 13C11.2091 13 13 13.8954 13 15Z"
+                    stroke="#1C274C" stroke-width="1.5"></path>
+                <path
+                    d="M2 12C2 8.22876 2 6.34315 3.17157 5.17157C4.34315 4 6.22876 4 10 4H14C17.7712 4 19.6569 4 20.8284 5.17157C22 6.34315 22 8.22876 22 12C22 15.7712 22 17.6569 20.8284 18.8284C19.6569 20 17.7712 20 14 20H10C6.22876 20 4.34315 20 3.17157 18.8284C2 17.6569 2 15.7712 2 12Z"
+                    stroke="#1C274C" stroke-width="1.5"></path>
+                <path d="M19 12H15" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"></path>
+                <path d="M19 9H14" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"></path>
+                <path d="M19 15H16" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"></path>
+            </g>
+        </svg> -->
+        <input required placeholder="Nombre" name="nombre" type="text" class="input_field" id="nombre"
+            autocomplete="on" formControlName="nombre" autofocus>
+        <div class="alerta alert alert-danger" *ngIf="registerForm.get('nombre')?.touched && registerForm.get('nombre')?.errors?.['required']">Nombre requerido</div>
+        <!-- <div class="alerta alert alert-danger" *ngIf="registerForm.get('nombre')?.errors?.['maxLength']">Nombre requerido</div> -->
+      </div>
+
+      <!-- Apellido Paterno -->
+      <div class="input_container">
+        <label class="input_label" for="apellido_Paterno">Apellido Paterno</label>
+        <!-- <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+                <circle cx="9" cy="9" r="2" stroke="#1C274C" stroke-width="1.5"></circle>
+                <path
+                    d="M13 15C13 16.1046 13 17 9 17C5 17 5 16.1046 5 15C5 13.8954 6.79086 13 9 13C11.2091 13 13 13.8954 13 15Z"
+                    stroke="#1C274C" stroke-width="1.5"></path>
+                <path
+                    d="M2 12C2 8.22876 2 6.34315 3.17157 5.17157C4.34315 4 6.22876 4 10 4H14C17.7712 4 19.6569 4 20.8284 5.17157C22 6.34315 22 8.22876 22 12C22 15.7712 22 17.6569 20.8284 18.8284C19.6569 20 17.7712 20 14 20H10C6.22876 20 4.34315 20 3.17157 18.8284C2 17.6569 2 15.7712 2 12Z"
+                    stroke="#1C274C" stroke-width="1.5"></path>
+                <path d="M19 12H15" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"></path>
+                <path d="M19 9H14" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"></path>
+                <path d="M19 15H16" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"></path>
+            </g>
+        </svg> -->
+        <input required placeholder="Apellido Paterno" name="apellido_Paterno" type="text" class="input_field"
+            id="apellido_Paterno" formControlName="apellido_Paterno" autocomplete="on">
+        <div class="alerta alert alert-danger" *ngIf="registerForm.get('apellido_Paterno')?.touched && registerForm.get('apellido_Paterno')?.errors?.['required']">Apellido requerido</div>
+      </div>
+
+      <!-- Apellido Materno -->
+      <div class="input_container">
+        <label class="input_label" for="apellido_Materno">Apellido Materno</label>
+        <!-- <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+                <circle cx="9" cy="9" r="2" stroke="#1C274C" stroke-width="1.5"></circle>
+                <path
+                    d="M13 15C13 16.1046 13 17 9 17C5 17 5 16.1046 5 15C5 13.8954 6.79086 13 9 13C11.2091 13 13 13.8954 13 15Z"
+                    stroke="#1C274C" stroke-width="1.5"></path>
+                <path
+                    d="M2 12C2 8.22876 2 6.34315 3.17157 5.17157C4.34315 4 6.22876 4 10 4H14C17.7712 4 19.6569 4 20.8284 5.17157C22 6.34315 22 8.22876 22 12C22 15.7712 22 17.6569 20.8284 18.8284C19.6569 20 17.7712 20 14 20H10C6.22876 20 4.34315 20 3.17157 18.8284C2 17.6569 2 15.7712 2 12Z"
+                    stroke="#1C274C" stroke-width="1.5"></path>
+                <path d="M19 12H15" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"></path>
+                <path d="M19 9H14" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"></path>
+                <path d="M19 15H16" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"></path>
+            </g>
+        </svg> -->
+        <input required placeholder="Apellido Materno" name="apellido_Materno" type="text" class="input_field"
+            id="apellido_Materno" formControlName="apellido_Materno" autocomplete="on">
+        <div class="alerta alert alert-danger" *ngIf="registerForm.get('apellido_Materno')?.touched && registerForm.get('apellido_Materno')?.errors?.['required']">Apellido requerido</div>
+      </div>
+
+      <!-- Usuario -->
+      <div class="input_container">
+        <label class="input_label" for="nombre">Usuario</label>
+        <!-- <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+                <circle cx="9" cy="9" r="2" stroke="#1C274C" stroke-width="1.5"></circle>
+                <path
+                    d="M13 15C13 16.1046 13 17 9 17C5 17 5 16.1046 5 15C5 13.8954 6.79086 13 9 13C11.2091 13 13 13.8954 13 15Z"
+                    stroke="#1C274C" stroke-width="1.5"></path>
+                <path
+                    d="M2 12C2 8.22876 2 6.34315 3.17157 5.17157C4.34315 4 6.22876 4 10 4H14C17.7712 4 19.6569 4 20.8284 5.17157C22 6.34315 22 8.22876 22 12C22 15.7712 22 17.6569 20.8284 18.8284C19.6569 20 17.7712 20 14 20H10C6.22876 20 4.34315 20 3.17157 18.8284C2 17.6569 2 15.7712 2 12Z"
+                    stroke="#1C274C" stroke-width="1.5"></path>
+                <path d="M19 12H15" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"></path>
+                <path d="M19 9H14" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"></path>
+                <path d="M19 15H16" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"></path>
+            </g>
+        </svg> -->
+        <input required placeholder="Usuario" name="usuario" type="text" class="input_field" id="usuario"
+            autocomplete="on" formControlName="usuario">
+        <div class="alerta alert alert-danger" *ngIf="registerForm.get('usuario')?.touched && registerForm.get('usuario')?.errors?.['required']">Usuario requerido</div>
+        <div class="alerta alert alert-danger" *ngIf="registerForm.get('usuario')?.touched && registerForm.get('usuario')?.errors?.['minlength']">Usuario mínimo de {{registerForm.get('usuario')?.errors?.['minlength'].requiredLength}} caractéres</div>
+        <div class="alerta alert alert-danger" *ngIf="registerForm.get('usuario')?.touched && registerForm.get('usuario')?.errors?.['maxlength']">Usuario máximo de {{registerForm.get('usuario')?.errors?.['maxlength'].requiredLength}} caractéres</div>
+      </div>
+
+      <!-- Contraseña -->
+      <div class="input_container">
+        <label class="input_label" for="contraseña">Contraseña</label>
+        <!-- <svg fill="none" viewBox="0 0 24 24" height="24" width="24" xmlns="http://www.w3.org/2000/svg" class="icon">
+            <path stroke-linecap="round" stroke-width="1.5" stroke="#141B34"
+                d="M18 11.0041C17.4166 9.91704 16.273 9.15775 14.9519 9.0993C13.477 9.03404 11.9788 9 10.329 9C8.67911 9 7.18091 9.03404 5.70604 9.0993C3.95328 9.17685 2.51295 10.4881 2.27882 12.1618C2.12602 13.2541 2 14.3734 2 15.5134C2 16.6534 2.12602 17.7727 2.27882 18.865C2.51295 20.5387 3.95328 21.8499 5.70604 21.9275C6.42013 21.9591 7.26041 21.9834 8 22">
+            </path>
+            <path stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5" stroke="#141B34"
+                d="M6 9V6.5C6 4.01472 8.01472 2 10.5 2C12.9853 2 15 4.01472 15 6.5V9"></path>
+            <path fill="#141B34"
+                d="M21.2046 15.1045L20.6242 15.6956V15.6956L21.2046 15.1045ZM21.4196 16.4767C21.7461 16.7972 22.2706 16.7924 22.5911 16.466C22.9116 16.1395 22.9068 15.615 22.5804 15.2945L21.4196 16.4767ZM18.0228 15.1045L17.4424 14.5134V14.5134L18.0228 15.1045ZM18.2379 18.0387C18.5643 18.3593 19.0888 18.3545 19.4094 18.028C19.7299 17.7016 19.7251 17.1771 19.3987 16.8565L18.2379 18.0387ZM14.2603 20.7619C13.7039 21.3082 12.7957 21.3082 12.2394 20.7619L11.0786 21.9441C12.2794 23.1232 14.2202 23.1232 15.4211 21.9441L14.2603 20.7619ZM12.2394 20.7619C11.6914 20.2239 11.6914 19.358 12.2394 18.82L11.0786 17.6378C9.86927 18.8252 9.86927 20.7567 11.0786 21.9441L12.2394 20.7619ZM12.2394 18.82C12.7957 18.2737 13.7039 18.2737 14.2603 18.82L15.4211 17.6378C14.2202 16.4587 12.2794 16.4587 11.0786 17.6378L12.2394 18.82ZM14.2603 18.82C14.8082 19.358 14.8082 20.2239 14.2603 20.7619L15.4211 21.9441C16.6304 20.7567 16.6304 18.8252 15.4211 17.6378L14.2603 18.82ZM20.6242 15.6956L21.4196 16.4767L22.5804 15.2945L21.785 14.5134L20.6242 15.6956ZM15.4211 18.82L17.8078 16.4767L16.647 15.2944L14.2603 17.6377L15.4211 18.82ZM17.8078 16.4767L18.6032 15.6956L17.4424 14.5134L16.647 15.2945L17.8078 16.4767ZM16.647 16.4767L18.2379 18.0387L19.3987 16.8565L17.8078 15.2945L16.647 16.4767ZM21.785 14.5134C21.4266 14.1616 21.0998 13.8383 20.7993 13.6131C20.4791 13.3732 20.096 13.1716 19.6137 13.1716V14.8284C19.6145 14.8284 19.619 14.8273 19.6395 14.8357C19.6663 14.8466 19.7183 14.8735 19.806 14.9391C19.9969 15.0822 20.2326 15.3112 20.6242 15.6956L21.785 14.5134ZM18.6032 15.6956C18.9948 15.3112 19.2305 15.0822 19.4215 14.9391C19.5091 14.8735 19.5611 14.8466 19.5879 14.8357C19.6084 14.8273 19.6129 14.8284 19.6137 14.8284V13.1716C19.1314 13.1716 18.7483 13.3732 18.4281 13.6131C18.1276 13.8383 17.8008 14.1616 17.4424 14.5134L18.6032 15.6956Z">
+            </path>
+        </svg> -->
+        <input placeholder="Contraseña" name="contraseña" type="password" class="input_field" id="contraseña" formControlName="contraseña">
+        <div class="alerta alert alert-danger" *ngIf="registerForm.get('contraseña')?.touched && registerForm.get('contraseña')?.errors?.['required']">Contraseña requerido</div>
+        <div class="alerta alert alert-danger" *ngIf="registerForm.get('contraseña')?.touched && registerForm.get('contraseña')?.errors?.['minlength']">Contraseña mínima de {{registerForm.get('contraseña')?.errors?.['minlength'].requiredLength}} caractéres</div>
+        <div class="alerta alert alert-danger" *ngIf="registerForm.get('contraseña')?.touched && registerForm.get('contraseña')?.errors?.['maxlength']">Contraseña máxima de {{registerForm.get('contraseña')?.errors?.['maxlength'].requiredLength}} caractéres</div>
+        <!-- <input placeholder="Contraseña" name="input-name" type="{{ passwordVisible ? 'text' : 'password '}}" class="input_field" id="password" formControlName="password"> -->
+        <!-- <svg class="icon showPass" width="24" height="24" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path clip-rule="evenodd" d="M22.6928 1.55018C22.3102 1.32626 21.8209 1.45915 21.6 1.84698L19.1533 6.14375C17.4864 5.36351 15.7609 4.96457 14.0142 4.96457C9.32104 4.96457 4.781 7.84644 1.11993 13.2641L1.10541 13.2854L1.09271 13.3038C0.970762 13.4784 0.967649 13.6837 1.0921 13.8563C3.79364 17.8691 6.97705 20.4972 10.3484 21.6018L8.39935 25.0222C8.1784 25.4101 8.30951 25.906 8.69214 26.1299L9.03857 26.3326C9.4212 26.5565 9.91046 26.4237 10.1314 26.0358L23.332 2.86058C23.553 2.47275 23.4219 1.97684 23.0392 1.75291L22.6928 1.55018ZM18.092 8.00705C16.7353 7.40974 15.3654 7.1186 14.0142 7.1186C10.6042 7.1186 7.07416 8.97311 3.93908 12.9239C3.63812 13.3032 3.63812 13.8561 3.93908 14.2354C6.28912 17.197 8.86102 18.9811 11.438 19.689L12.7855 17.3232C11.2462 16.8322 9.97333 15.4627 9.97333 13.5818C9.97333 11.2026 11.7969 9.27368 14.046 9.27368C15.0842 9.27368 16.0317 9.68468 16.7511 10.3612L18.092 8.00705ZM15.639 12.3137C15.2926 11.7767 14.7231 11.4277 14.046 11.4277C12.9205 11.4277 12 12.3906 12 13.5802C12 14.3664 12.8432 15.2851 13.9024 15.3624L15.639 12.3137Z" fill="#000000" fill-rule="evenodd"></path><path d="M14.6873 22.1761C19.1311 21.9148 23.4056 19.0687 26.8864 13.931C26.9593 13.8234 27 13.7121 27 13.5797C27 13.4535 26.965 13.3481 26.8956 13.2455C25.5579 11.2677 24.1025 9.62885 22.5652 8.34557L21.506 10.2052C22.3887 10.9653 23.2531 11.87 24.0894 12.9239C24.3904 13.3032 24.3904 13.8561 24.0894 14.2354C21.5676 17.4135 18.7903 19.2357 16.0254 19.827L14.6873 22.1761Z" fill="#000000"></path></g></svg> -->
+      </div>
+
+      <!-- Grado -->
+      <div class="input_container">
+        <label class="input_label" for="grado">Grado</label>
+        <!-- <svg class="icon" fill="#000000" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 93.963 93.963" xml:space="preserve">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+                <g>
+                    <g>
+                        <rect x="14.856" y="17.021" width="79.067" height="10.896"></rect>
+                        <rect x="14.788" y="41.848" width="79.175" height="10.896"></rect>
+                        <rect x="14.625" y="67.383" width="79.299" height="10.895"></rect>
+                        <path
+                            d="M4.045,15.537c0.238-0.207,0.438-0.395,0.603-0.565c-0.057,0.705-0.087,1.659-0.087,2.861v10.083h2.511V12.301H4.976 l-4.59,3.61l1.262,1.59C3.007,16.398,3.805,15.745,4.045,15.537z">
+                        </path>
+                        <path
+                            d="M3.328,51.341l2.804-2.718c1.262-1.186,2.16-2.126,2.704-2.823c0.541-0.696,0.941-1.372,1.202-2.027 c0.262-0.656,0.394-1.349,0.394-2.077c0-1.326-0.452-2.381-1.357-3.166c-0.907-0.785-2.112-1.177-3.613-1.177 c-0.959,0-1.862,0.158-2.708,0.475c-0.848,0.316-1.721,0.854-2.619,1.613l1.405,1.712c0.757-0.596,1.426-1.009,2.003-1.237 c0.58-0.229,1.178-0.343,1.797-0.343c0.772,0,1.38,0.21,1.816,0.63c0.438,0.42,0.657,0.994,0.657,1.724 c0,0.53-0.091,1.027-0.275,1.491c-0.184,0.465-0.478,0.96-0.878,1.486c-0.402,0.527-1.219,1.42-2.448,2.679l-4.166,4.188v1.967 h10.951V51.45H3.328V51.341z">
+                        </path>
+                        <path
+                            d="M6.973,73.022v-0.09c1.084-0.234,1.921-0.693,2.519-1.375c0.599-0.682,0.895-1.533,0.895-2.558 c0-1.229-0.455-2.194-1.369-2.896c-0.912-0.699-2.183-1.049-3.811-1.049c-1.961,0-3.682,0.545-5.162,1.635l1.271,1.812 C2.088,68,2.759,67.665,3.328,67.491c0.566-0.174,1.155-0.26,1.767-0.26c0.876,0,1.54,0.188,1.99,0.563 c0.447,0.376,0.673,0.911,0.673,1.603c0,1.783-1.289,2.674-3.868,2.674H2.464v2.109h1.402c1.467,0,2.542,0.203,3.229,0.608 C7.78,75.194,8.12,75.828,8.12,76.69c0,0.973-0.309,1.689-0.928,2.153c-0.618,0.464-1.553,0.696-2.806,0.696 c-0.707,0-1.443-0.092-2.21-0.275C1.41,79.08,0.685,78.819,0,78.479v2.309c1.23,0.583,2.74,0.874,4.529,0.874 c2.026,0,3.586-0.421,4.687-1.267c1.096-0.843,1.644-2.041,1.644-3.596c0-1.068-0.322-1.924-0.971-2.568 C9.24,73.587,8.269,73.184,6.973,73.022z">
+                        </path>
+                    </g>
+                </g>
+            </g>
+        </svg> -->
+        <input required placeholder="Grado" name="grado" type="number" min="1" max="3" class="input_field"
+        id="grado" formControlName="grado" autocomplete="on">
+        <div class="alerta alert alert-danger" *ngIf="registerForm.get('grado')?.touched && registerForm.get('grado')?.errors?.['required']">Grado requerido</div>
+        <div class="alerta alert alert-danger" *ngIf="registerForm.get('grado')?.touched && registerForm.get('grado')?.errors?.['min']">Grado Incorrecto</div>
+        <div class="alerta alert alert-danger" *ngIf="registerForm.get('grado')?.touched && registerForm.get('grado')?.errors?.['max']">Grado Incorrecto</div>
+      </div>
+
+      <!-- Taller -->
+      <div class="input_container">
+        <label class="input_label" for="taller">Taller</label>
+        <!-- <svg class="icon" fill="#000000" version="1.1" id="XMLID_66_" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" xml:space="preserve">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+                <g id="workshop">
+                    <g>
+                        <polygon points="24,17 20,17 20,15 22,15 22,3 4,3 4,5 2,5 2,1 24,1 "></polygon>
+                    </g>
+                    <g>
+                        <rect x="10" width="6" height="4"></rect>
+                    </g>
+                    <g>
+                        <path
+                            d="M13,24H0v-5c0-2.3,1.3-4.4,3.3-5.4C2.5,12.8,2,11.7,2,10.5C2,8,4,6,6.5,6S11,8,11,10.5c0,0.7-0.1,1.3-0.4,1.8 c1.4-0.6,3.4-1.8,5.7-4.1l2-2l1.4,1.4L18.4,9l1.8,1.8l-0.3,0.6c-0.1,0.2-2.4,5.5-6.6,7.2C13.1,18.7,13,18.8,13,19V24z M2,22h9v-3 c0-1,0.6-1.9,1.5-2.3c2.7-1.1,4.6-4.2,5.3-5.5L17,10.4C12.1,15,8.4,15,8,15H6c-2.2,0-4,1.8-4,4V22z M6.5,13C7.9,13,9,11.9,9,10.5 S7.9,8,6.5,8S4,9.1,4,10.5S5.1,13,6.5,13z">
+                        </path>
+                    </g>
+                </g>
+            </g>
+        </svg> -->
+        <select name="taller" required class="input_field" id="taller" formControlName="taller">
+            <option [selected]="true" value="#">Taller</option>
+            <option value="alimentos">Alimentos</option>
+            <option value="computacion" selected>Computación</option>
+            <option value="corte y confeccion">Corte y Confección</option>
+            <option value="dibujo tecnico">Dibujo Técnico</option>
+            <option value="electricidad">Electricidad</option>
+            <option value="estructuras metalicas">Estructuras Metálicas</option>
+        </select>
+        <div class="alerta alert alert-danger" *ngIf="registerForm.get('taller')?.touched && registerForm.get('taller')?.errors?.['required']">Taller requerido</div>
+      </div>
+
+      <!-- Grupo -->
+      <div class="input_container">
+        <label class="input_label" for="grupo">Grupo</label>
+        <!-- <svg class="icon" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+                <title>A-Z_sort_ascending_letters_line</title>
+                <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g id="Editor" transform="translate(-240.000000, -96.000000)">
+                        <g id="A-Z_sort_ascending_letters_line" transform="translate(240.000000, 96.000000)">
+                            <path
+                                d="M24,0 L24,24 L0,24 L0,0 L24,0 Z M12.5934901,23.257841 L12.5819402,23.2595131 L12.5108777,23.2950439 L12.4918791,23.2987469 L12.4918791,23.2987469 L12.4767152,23.2950439 L12.4056548,23.2595131 C12.3958229,23.2563662 12.3870493,23.2590235 12.3821421,23.2649074 L12.3780323,23.275831 L12.360941,23.7031097 L12.3658947,23.7234994 L12.3769048,23.7357139 L12.4804777,23.8096931 L12.4953491,23.8136134 L12.4953491,23.8136134 L12.5071152,23.8096931 L12.6106902,23.7357139 L12.6232938,23.7196733 L12.6232938,23.7196733 L12.6266527,23.7031097 L12.609561,23.275831 C12.6075724,23.2657013 12.6010112,23.2592993 12.5934901,23.257841 L12.5934901,23.257841 Z M12.8583906,23.1452862 L12.8445485,23.1473072 L12.6598443,23.2396597 L12.6498822,23.2499052 L12.6498822,23.2499052 L12.6471943,23.2611114 L12.6650943,23.6906389 L12.6699349,23.7034178 L12.6699349,23.7034178 L12.678386,23.7104931 L12.8793402,23.8032389 C12.8914285,23.8068999 12.9022333,23.8029875 12.9078286,23.7952264 L12.9118235,23.7811639 L12.8776777,23.1665331 C12.8752882,23.1545897 12.8674102,23.1470016 12.8583906,23.1452862 L12.8583906,23.1452862 Z M12.1430473,23.1473072 C12.1332178,23.1423925 12.1221763,23.1452606 12.1156365,23.1525954 L12.1099173,23.1665331 L12.0757714,23.7811639 C12.0751323,23.7926639 12.0828099,23.8018602 12.0926481,23.8045676 L12.108256,23.8032389 L12.3092106,23.7104931 L12.3186497,23.7024347 L12.3186497,23.7024347 L12.3225043,23.6906389 L12.340401,23.2611114 L12.337245,23.2485176 L12.337245,23.2485176 L12.3277531,23.2396597 L12.1430473,23.1473072 Z"
+                                id="MingCute" fill-rule="nonzero"> </path>
+                            <path
+                                d="M10.7586,13 C11.6994,13 12.1893533,14.0920038 11.6139222,14.7923977 L11.5364,14.8778 L7.41424,19 L11,19 C11.5523,19 12,19.4477 12,20 C12,20.51285 11.613973,20.9355092 11.1166239,20.9932725 L11,21 L5.24145,21 C4.30065,21 3.81071515,19.9079962 4.3861123,19.2076023 L4.46363,19.1222 L8.58581,15 L5.00003,15 C4.44774,15 4.00003,14.5523 4.00003,14 C4.00003,13.48715 4.38606566,13.0644908 4.8834079,13.0067275 L5.00003,13 L10.7586,13 Z M17,4 C17.5523,4 18,4.44772 18,5 L18,17.414 L19.1213,16.2927 C19.5119,15.9022 20.145,15.9022 20.5356,16.2927 C20.9261,16.6832 20.9261,17.3164 20.5356,17.7069 L17.7071,20.5354 C17.3166,20.9259 16.6834,20.9259 16.2929,20.5354 L13.4645,17.7069 C13.074,17.3164 13.074,16.6832 13.4645,16.2927 C13.855,15.9022 14.4882,15.9022 14.8787,16.2927 L16,17.414 L16,5 C16,4.44772 16.4477,4 17,4 Z M8.00003,3 C8.674326,3 9.28067533,3.39562382 9.55608491,4.00153967 L9.60994,4.13453 L11.9418,10.6637 C12.1275,11.1838 11.8565,11.756 11.3364,11.9417 C10.85345,12.1142286 10.3254908,11.8927974 10.1038503,11.443863 L10.0583,11.3363 L9.58102,10 L6.41903,10 L5.94177,11.3363 C5.75602,11.8564 5.1838,12.1275 4.66369,11.9417 C4.18073071,11.7692643 3.91252214,11.2635709 4.02540056,10.7757876 L4.05829,10.6637 L6.39012,4.13453 C6.63311,3.45416 7.27757,3 8.00003,3 Z M8.00003,5.57321 L7.13332,8 L8.86674,8 L8.00003,5.57321 Z"
+                                id="形状" fill="#09244B"> </path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </svg> -->
+        <select name="grupo" required class="input_field" id="grupo" formControlName="grupo">
+            <option [selected]="true" value="#">Grupo</option>
+            <option value="a">A</option>
+            <option value="b">B</option>
+            <option value="c">C</option>
+            <option value="d">D</option>
+            <option value="e">E</option>
+            <option value="f">F</option>
+        </select>
+        <div class="alerta alert alert-danger" *ngIf="registerForm.get('grupo')?.touched && registerForm.get('grupo')?.errors?.['required']">Grupo requerido</div>
+      </div>
+
+    </div>
+
+    <!-- [disabled]="registerForm.invalid" -->
+    <button type="submit" [disabled]="registerForm.invalid">Crear Cuenta</button>
+    <!-- <button type="submit" >Crear Cuenta</button> -->
+
+  </form>
+
+</div>
