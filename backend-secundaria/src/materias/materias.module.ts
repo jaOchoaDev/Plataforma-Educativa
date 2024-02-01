@@ -4,9 +4,10 @@ import { MateriasController } from "./materias.controller";
 import { TypeOrmModule } from "@nestjs/typeorm";
 import { Materias } from "./materias.entity";
 import { UsuariosModule } from "src/usuarios/usuarios.module";
+import { DocentesModule } from "src/docentes/docentes.module";
 
 @Module({
-    imports: [TypeOrmModule.forFeature([Materias]), UsuariosModule],
+    imports: [TypeOrmModule.forFeature([Materias]), UsuariosModule, DocentesModule],
     providers: [MateriasService],
     controllers: [MateriasController]
 })

@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { MateriasService } from '../services/materias.service';
+import { Materias } from '../models/materias';
 
 
 @Component({
@@ -8,17 +10,22 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['./alumnos.component.css']
 })
 
-export class AlumnosComponent {
-// alumno: any;
-alumno = 'Javier Ayala';
+export class AlumnosComponent implements OnInit{
 
-  // constructor(public dialog: MatDialog) {}
+  ngOnInit(): void {
+    this.list();
+  }
 
-  // openDialogAlumno(): void {
-  //   const dialogRef = this.dialog.open(MateriaComponent, {
-  //     width: '60vw',
-  //     height: '70vh'
-  //   });
-  // }
+  listMaterias: Materias[] = [];
+
+  constructor(private materiasService: MateriasService){}
+
+  list(){
+    this.materiasService.getMaterias().subscribe(res =>{
+      if(res.success){
+        this.listMaterias = res.data;
+      }
+    });
+  }
 
 }

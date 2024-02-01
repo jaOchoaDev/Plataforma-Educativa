@@ -1,3 +1,4 @@
+import { Docentes } from "src/docentes/docentes.entity";
 import { Alumno } from "src/usuarios/usuarios.entity";
 import { Column, Entity, ManyToMany, PrimaryGeneratedColumn } from "typeorm";
 
@@ -9,12 +10,15 @@ export class Materias{
     @Column()
     nombre_materia: string;
 
-    @Column()
-    docente: string;
+    // @Column()
+    // docente: string;
 
     @Column()
     grado: number;
 
     @ManyToMany(() => Alumno, alumno => alumno.materias)
     estudiante: Alumno
+
+    @ManyToMany(() => Docentes, profe => profe.materias)
+    docentes: Docentes[]
 }

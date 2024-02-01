@@ -1,15 +1,16 @@
 .banner{
     height: 100vh;
     /* background con opacidad negra */
-    /* background-image: linear-gradient(rgba(27, 27, 27, 0.7),rgba(27, 27, 27, 0.7)), url(../../assets/img/slider1.jpg); */
-    background-image: linear-gradient(rgba(5, 7, 12, 0.7),rgba(5, 7, 12, 0.7)), url(../../assets/img/slider1.jpg);
+    /* background-image: linear-gradient(rgba(5, 7, 12, 0.7),rgba(5, 7, 12, 0.7)), url(../../assets/img/slider1.jpg); */
+    background-image: linear-gradient(rgba(5, 7, 12, 0.6),rgba(5, 7, 12, 0.6)), url(../../assets/img/slider1.jpg);
+    /* background-image: linear-gradient(rgba(5, 7, 12, 0.7),rgba(5, 7, 12, 0.7)), url(../../assets/img/bannerPrincipal.png); */
     background-repeat: no-repeat;
     background-position: center;
     /* filter: blur(2px); */
     background-size: cover;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: end;
+    /* justify-content: space-evenly; */
 }
 /* picture{
     width: 100%;
@@ -30,4 +31,5 @@ h2{
     text-shadow: 0px 0px 10px rgb(255, 255, 255, 0.5);
     /* text-decoration-line: underline;
     text-decoration-color: #860e0e; */
+    padding: 0 0 10% 10%;
 }

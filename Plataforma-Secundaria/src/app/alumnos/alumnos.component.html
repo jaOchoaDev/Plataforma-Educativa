@@ -3,7 +3,8 @@
     <div class="encabezado">
 
         <div class="saludo">
-            <h2>Bienvenido {{ alumno }}</h2>
+            <!-- <h2>Bienvenido {{ alumno }}</h2> -->
+            <h2>Bienvenido</h2>
         </div>
 
         <div class="info">
@@ -17,17 +18,20 @@
 
     <div class="grid">
 
-        <div class="card">
+        <div *ngForm="let item of listMaterias" class="card">
             <div class="image-container">
                 <img src="../../assets/img/computacion.jpg" alt="Imagen de la tarjeta">
             </div>
             <div class="card-content">
-                <h2>Nombre de la Materia</h2>
-                <p>Impartida por:</p>
+                <!-- <h2>Nombre de la Materia</h2>
+                <p>Impartida por:</p> -->
+                <h2>{{item.nombre_materia}}</h2>
+                <p>Impartido por: </p>
+                <p>Grado: {{item.grado}}</p>
             </div>
         </div>
 
-        <div class="card">
+        <!-- <div class="card">
             <div class="image-container">
                 <img src="../../assets/img/alimentos.jpg" alt="Imagen de la tarjeta">
             </div>
@@ -35,7 +39,7 @@
                 <h2>Nombre de la Materia</h2>
                 <p>Impartida por:</p>
             </div>
-        </div>
+        </div> -->
 
 
 

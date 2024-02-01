@@ -14,4 +14,10 @@ export class MateriasService{
         return this.materiasRepository.find();
     }
 
+    getMateriasId(id: number) {
+        return this.materiasRepository.findOne({
+            where: { id }
+        });
+    }
+
 }

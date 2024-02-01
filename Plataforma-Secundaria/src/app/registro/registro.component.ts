@@ -2,10 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 // import { Alumno } from '../models/alumno';
 // import { HttpClient} from '@angular/common/http';
-import { FormularioService } from '../formulario.service';
+// import { FormularioService } from '../formulario.service';
+import { RegistroService } from '../services/registro.service';
 // import { Router } from '@angular/router';
 
-import { Alumno } from '../interfaces/alumno';
+// import { Alumno } from '../interfaces/alumno';
 
 @Component({
   selector: 'app-registro',
@@ -27,14 +28,14 @@ export class RegistroComponent implements OnInit {
 //
 
   // Datos del formulario
-FormGroup: any = {};
+// FormGroup: any = {};
 
 registerForm!: FormGroup;
 
 
   //este constructor es para usar el initForm()
   constructor(private readonly fb: FormBuilder,
-    private formularioService: FormularioService){}
+    private registroService: RegistroService){}
 
   // constructor(private formularioService: FormularioService,
   //   private router: Router){}
@@ -100,7 +101,7 @@ registerForm!: FormGroup;
     //   }
     // });
 
-    this.formularioService.submitForm(this.registerForm).subscribe((data) => {});
+    this.registroService.registrarAlumno(this.registerForm).subscribe((data) => {});
     // ------------------------------------------------------------------------------------------------
 
     //     const alumno = new this.registerForm(this.nombre, this.apellido_Paterno, this.apellido_Materno, this.contraseña, this.grado, this.taller, this.grupo);

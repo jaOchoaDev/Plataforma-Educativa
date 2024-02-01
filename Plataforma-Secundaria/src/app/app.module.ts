@@ -33,6 +33,7 @@ import { RegistroComponent } from './registro/registro.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ContactanosComponent } from './contactanos/contactanos.component';
 import { AlumnosComponent } from './alumnos/alumnos.component';
+import { LogrosComponent } from './logros/logros.component';
 
 
 @NgModule({
@@ -60,6 +61,7 @@ import { AlumnosComponent } from './alumnos/alumnos.component';
     RegistroComponent,
     ContactanosComponent,
     AlumnosComponent,
+    LogrosComponent,
   ],
   imports: [
     BrowserModule,
