@@ -1,5 +1,13 @@
 .patern{
     width: 100%;
-    /* height: 90vh; */
+    height: 85vh;
+    /* height: auto; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.child{
+    width: 100%;
     height: auto;
 }

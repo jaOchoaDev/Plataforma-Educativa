@@ -33,9 +33,9 @@ export class UsuariosController {
 
     //metodo para registrar usando dto
     @Post()
-    save(@Body() newAlumno:CreateAlumnoDto){
-        // console.log(newAlumno);
-        return this.usuariosService.create(newAlumno).then(res => {
+    async save(@Body() newAlumno:CreateAlumnoDto){
+        console.log('Datos recibidos del front: ', newAlumno);
+        return await this.usuariosService.create(newAlumno).then(res => {
             return { success: true, data: res }
         }).catch(error => {
             throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR);

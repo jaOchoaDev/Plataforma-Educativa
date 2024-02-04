@@ -1,5 +1,53 @@
-.patern{
+.contenedor{
     width: 100%;
-    /* height: 90vh; */
-    height: auto;
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    /* background-image: url(../../assets/img/fondo.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center; */
+    font-family: 'Work Sans', sans-serif;
+}
+
+.info{
+    width: 50%;
+    height: 90%;
+    /* background-color: var(--colorCard); */
+    /* background-color: rgb(128, 44, 44, 0.8); */
+    background-color: rgb(240, 229, 201, 0.7);
+    padding: 4rem 11rem 4rem 3rem;
+    /* position: absolute; */
+    /* z-index: 100; */
+}
+
+.info h2{
+    /* color: var(--colorBlanco); */
+    color: var(--colorCopy);
+    font-weight: 600;
+    font-size: 3rem;    
+}
+
+.info p{
+    font-weight: 400;
+    font-size: 1.2rem;
+    text-align: justify;
+    /* color: var(--colorBlanco); */
+    color: var(--colorCopy);
+}
+
+.picture{
+    width: 60%;
+    height: 70%;
+    background-image: url(../../assets/log1/atle1.png);
+    /* background-size: contain; */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: absolute;
+    top: 15%;
+    left: 40%;
+    /* z-index: -1; */
+    /* background-color: rgb(161, 219, 219); */
 }

@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 // import { Alumno } from '../models/alumno';
 // import { HttpClient} from '@angular/common/http';
 // import { FormularioService } from '../formulario.service';
 import { RegistroService } from '../services/registro.service';
-// import { Router } from '@angular/router';
+import { Router } from '@angular/router';
+import { Alumno } from '../models/alumno';
 
 // import { Alumno } from '../interfaces/alumno';
 
@@ -13,122 +14,64 @@ import { RegistroService } from '../services/registro.service';
   templateUrl: './registro.component.html',
   styleUrls: ['./registro.component.css']
 })
-export class RegistroComponent implements OnInit {
+export class RegistroComponent {
 
-//
-//   alumno: Alumno = {
-//   nombre: '',
-//   apellido_Paterno: '',
-//   apellido_Materno: '',
-//   contraseña: '',
-//   grado: null,
-//   taller: '',
-//   grupo: ''
-// }
-//
+  //------------------------------------USANDO NGMODEL-----------------------------------
+  
+  //----------Double Binding con ngModel
+  // nombre = "";
+  // apellido_Paterno = "";
+  // apellido_Materno = "";
+  // usuario = "";
+  // contraseña = "";
+  // grado: number = null;
+  // taller = "";
+  // grupo = "";
+  
+  // constructor(private registroService: RegistroService, private router: Router){}
+  
+  // ngOnInit(): void {}
 
-  // Datos del formulario
-// FormGroup: any = {};
+// router.navigate sirve para redireccionar despues de una acción del form
+// this.router.navigate([])
 
-registerForm!: FormGroup;
-
-
-  //este constructor es para usar el initForm()
-  constructor(private readonly fb: FormBuilder,
-    private registroService: RegistroService){}
-
-  // constructor(private formularioService: FormularioService,
-  //   private router: Router){}
-  // constructor(private readonly fb: FormBuilder, private formularioService: FormularioService){}
-  // constructor(private fb: FormBuilder, private http: HttpClient){}
-
-  ngOnInit(): void {
-    //El siguiente código es para usar el initForm()
-    // this.registerForm = this.initForm();
-
-    // this.registerForm = this.fb.group({
-    //   nombre: new FormControl(''),
-    //   apellido_Paterno: new FormControl(''),
-    //   apellido_Materno: new FormControl(''),
-    //   contraseña: new FormControl(''),
-    //   grado: new FormControl(''),
-    //   taller: new FormControl(''),
-    //   grupo: new FormControl('')
-    // })
-
-    //El siguiente código es para no usar initForm()
-    this.registerForm = this.fb.group({
-      nombre: ['', [Validators.required, Validators.maxLength(40)]],
-      apellido_Paterno: ['', [Validators.required, Validators.maxLength(40)]],
-      apellido_Materno: ['', [Validators.required, Validators.maxLength(40)]],
-      usuario: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(15)]],
-      contraseña: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(8)]],
-      grado: ['', [Validators.required, Validators.min(1), Validators.max(3)]],
-      taller: ['', [Validators.required]],
-      grupo: ['', [Validators.required, Validators.maxLength(1)]],
-    });
-
-  }
-  // registerForm : any
-  onSubmit():void{
-
-    // const data = JSON.stringify(registerForm.value);
-    // this.formularioService.submitForm(data);
-
-    // this.formularioService.registerAlumno(this.alumno).subscribe({
-    //   next: response => {
-    //     console.log('Alumno registrado', response);
-    //   },
-    //   error: err => {
-    //     console.log('Problema de Registro', err);
-    //   }});
-
-    // this.formularioService.submitForm(this.registerForm).subscribe({
-    //   next: response => {
-    //     console.log('Alumno registrado', response);
-    //   },
-    //   error: err => {
-    //     console.log('Problema de Registro: ', err);
-    //   }});
-
-    // -------------------------------------------------------------------------------------------
-    // this.formularioService.submitForm(this.registerForm).subscribe({
-    //   next: response => {
-    //     console.log('Alumno registrado', response);
-    //   },
-    //   error: err => {
-    //     console.log('Problema de Registro: ', JSON.stringify(FormGroup, err));
-    //   }
-    // });
-
-    this.registroService.registrarAlumno(this.registerForm).subscribe((data) => {});
-    // ------------------------------------------------------------------------------------------------
-
-    //     const alumno = new this.registerForm(this.nombre, this.apellido_Paterno, this.apellido_Materno, this.contraseña, this.grado, this.taller, this.grupo);
-    // this.formularioService.registerAlumno(alumno).subscribe({
-    //   next: response => {
-    //     console.log('Alumno registrado', response);
-    //   },
-    //   error: err => {
-    //     console.log('Problema de Registro', err);
-    //   }});
-
-    // console.log('this.alumno: ', this.alumno);
-    console.log('this.registerForm: ', this.registerForm.value);
-    // this.registerForm.reset();
-
-  }
-
-  // initForm(): FormGroup{
-  //   return this.fb.group({
-  //     nombre: ['', [Validators.required]],
-  //     apellido_Paterno: ['', [Validators.required]],
-  //     apellido_Materno: ['', [Validators.required]],
-  //     contraseña: ['', [Validators.required, Validators.minLength(4)]],
-  //     grado: ['', [Validators.required, Validators.min(1), Validators.max(3)]],
-  //     taller: ['', [Validators.required]],
-  //     grupo: ['', [Validators.required, Validators.maxLength(1)]],
-  //   })
+//Método paa registrar alumno usando ngModel
+  // onCreate(): void{
+  //   const registro = new Alumno(this.nombre, this.apellido_Paterno, this.apellido_Materno, this.usuario, this.contraseña, this.grado, this.taller, this.grupo);
+  //   this.registroService.registrar(registro).subscribe({
+  //     next: data =>{
+  //       console.log('Alumno Registrado', data);
+  //     }, error: err=>{
+  //       console.log('Problema de Registro', err);
+  //     }
+  //   });
   // }
+
+
+  //---------------------USANDO FORMGROUP------------------------------
+
+  constructor(private registroService: RegistroService){}
+
+  registerForm = new FormGroup({
+    nombre: new FormControl(''),
+    apellido_Paterno: new FormControl(''),
+    apellido_Materno: new FormControl(''),
+    usuario: new FormControl(''),
+    contraseña: new FormControl(''),
+    grado: new FormControl(''),
+    taller: new FormControl(''),
+    grupo: new FormControl('')
+  })
+
+  onCreate(){
+    console.log('datos a enviar al servicio: ', this.registerForm.value);
+    this.registroService.registrar(this.registerForm.value).subscribe({
+      next: response=>{
+        console.log('Alumno Registrado', response);
+      }, error: err=>{
+        console.log('Error de Registro', err);
+      }
+    });
+  }
 
 }

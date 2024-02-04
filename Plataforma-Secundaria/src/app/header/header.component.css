@@ -9,7 +9,7 @@ header{
     /* background-color: rgba(232, 195, 158, 0.295); */
     width: 100%;
     /* height: auto; */
-    height: 12vh;
+    height: 15vh;
     /* box-shadow: 1px 1px 3px rgba(150, 150, 150, 0.541); */
     /* box-shadow: 1px 1px 3px rgba(255, 255, 255, 0.541); */
     /* box-shadow: 1px 1px 3px #6a041acc; */
@@ -52,13 +52,12 @@ header h1{
     align-items: center;
 }
 .logo picture img{
-    width: 70px;
+    width: 100px;
     padding: 5px 0;
 }
 .logo picture h1{
     margin-left: 15px;
 }
-
 /* ------------------------------------------ */
 nav .main-menu{
     display: flex;
