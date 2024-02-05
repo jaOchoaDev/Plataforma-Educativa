@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { Alumno } from '../models/alumno';
@@ -28,10 +28,14 @@ export class RegistroService {
     //   return this.http.post<any>(`${this.registroURL}`, alumno);
     // }
 
-    registrar(datos: any){
+    registrar(datos: any): Observable<any>{
       console.log('Datos que lleagn al servicio: ', datos);
+      // console.log('Datos que tiene Alumno: ', Alumno);
       // return this.http.post<Alumno>(this.registroURL, datos)
-      return this.http.post<Alumno>(`${this.registroURL}`, datos)
+      const headers = new HttpHeaders({
+        'Content-Type': 'text/plain'
+      });
+      return this.http.post(`${this.registroURL}`, datos, {headers});
     }
 
 }

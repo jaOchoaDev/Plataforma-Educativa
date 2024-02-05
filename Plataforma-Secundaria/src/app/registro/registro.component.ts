@@ -14,7 +14,7 @@ import { Alumno } from '../models/alumno';
   templateUrl: './registro.component.html',
   styleUrls: ['./registro.component.css']
 })
-export class RegistroComponent {
+export class RegistroComponent implements OnInit{
 
   //------------------------------------USANDO NGMODEL-----------------------------------
   
@@ -50,7 +50,20 @@ export class RegistroComponent {
 
   //---------------------USANDO FORMGROUP------------------------------
 
-  constructor(private registroService: RegistroService){}
+  constructor(private registroService: RegistroService, private fb: FormBuilder){}
+
+  ngOnInit(): void {
+    this.registerForm = this.fb.group({
+      nombre: ['', [Validators.required, Validators.maxLength(40)]],
+      apellido_Paterno: ['', [Validators.required, Validators.maxLength(40)]],
+      apellido_Materno: ['', [Validators.required, Validators.maxLength(40)]],
+      usuario: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(15)]],
+      contraseña: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(8)]],
+      grado: ['', [Validators.required, Validators.min(1), Validators.max(3)]],
+      taller: ['', [Validators.required]],
+      grupo: ['', [Validators.required, Validators.maxLength(1)]],
+    });
+  }
 
   registerForm = new FormGroup({
     nombre: new FormControl(''),

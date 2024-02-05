@@ -29,8 +29,13 @@ export class ModalComponent {
     // console.log(response);
 
     const user = {usuario: this.loginForm.value.usuario, password: this.loginForm.value.password};
-    console.log('user de modal: ', user)
-    this.authService.login(user).subscribe((data) => {
+    console.log('datos a enviar al servicio: ', user)
+    this.authService.login(user).subscribe({
+      next: response =>{
+        console.log('LoginCorrecto', response);
+      }, error: err =>{
+        console.log('Error de Login', err);
+      }
     });
   }
 

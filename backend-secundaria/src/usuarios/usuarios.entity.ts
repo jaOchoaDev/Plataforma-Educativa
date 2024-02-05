@@ -26,10 +26,10 @@ export class Alumno {
   grado: number;
 
   @Column()
-  grupo: string;
-
-  @Column()
   taller: string;
+  
+  @Column()
+  grupo: string;
 
   @ManyToMany(() => Materias, materia => materia.estudiante)
   materias: Materias[]

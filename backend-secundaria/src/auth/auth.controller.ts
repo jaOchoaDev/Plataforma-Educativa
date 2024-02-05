@@ -9,9 +9,9 @@ export class AuthController {
 
     constructor(private readonly authService: AuthService){}
 
-    @Post('login')
-    // @Post()
+    @Post(':login')
     login(@Body() loginDto: LoginDto){
+        console.log('datos recibidos en el back: ', loginDto);
         return this.authService.login(loginDto);
     }
 
