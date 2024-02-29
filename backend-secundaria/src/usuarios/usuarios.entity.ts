@@ -1,5 +1,6 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToMany } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, ManyToMany, JoinTable } from 'typeorm';
 import { Materias } from 'src/materias/materias.entity';
+import { RolEntity } from 'src/rol/rol.entity';
 
 //Aquí se crea la tabla de alumnos en la bd
 @Entity({ name: 'alumnos' })
@@ -33,4 +34,12 @@ export class Alumno {
 
   @ManyToMany(() => Materias, materia => materia.estudiante)
   materias: Materias[]
+
+  @ManyToMany(type => RolEntity, rol => rol.alumnos, {eager: true})
+  @JoinTable({
+    name: 'alumnos_rol',
+    joinColumn: {name: 'alumnos_id'},
+    inverseJoinColumn: {name: 'rol_id'}
+  })
+  roles: RolEntity[];
 }
