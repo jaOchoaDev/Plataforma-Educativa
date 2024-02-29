@@ -33,6 +33,9 @@
           </g>
         </svg>
         <input placeholder="Nombre de Usuario" name="usuario" type="text" class="input_field" id="usuario" formControlName="usuario">
+        <div class="alerta alert alert-danger" *ngIf="loginForm.get('usuario')?.touched && loginForm.get('usuario')?.errors?.['required']">Usuario requerido</div>
+        <div class="alerta alert alert-danger" *ngIf="loginForm.get('usuario')?.touched && loginForm.get('usuario')?.errors?.['minlength']">Usuario mínimo de {{loginForm.get('usuario')?.errors?.['minlength'].requiredLength}} caractéres</div>
+        <div class="alerta alert alert-danger" *ngIf="loginForm.get('usuario')?.touched && loginForm.get('usuario')?.errors?.['maxlength']">Usuario máximo de {{loginForm.get('usuario')?.errors?.['maxlength'].requiredLength}} caractéres</div>
       </div>
 
       <div class="input_container">
@@ -48,6 +51,9 @@
           </path>
         </svg>
         <input placeholder="Contraseña" name="contraseña" type="password" class="input_field" id="contraseña" formControlName="password">
+        <div class="alerta alert alert-danger" *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.errors?.['required']">Contraseña requerido</div>
+        <div class="alerta alert alert-danger" *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.errors?.['minlength']">Contraseña mínima de {{loginForm.get('password')?.errors?.['minlength'].requiredLength}} caractéres</div>
+        <div class="alerta alert alert-danger" *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.errors?.['maxlength']">Contraseña máxima de {{loginForm.get('password')?.errors?.['maxlength'].requiredLength}} caractéres</div>
       </div>
 
       <button type="submit" class="login_btn">

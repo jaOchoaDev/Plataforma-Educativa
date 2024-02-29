@@ -32,10 +32,8 @@ export class RegistroService {
       console.log('Datos que lleagn al servicio: ', datos);
       // console.log('Datos que tiene Alumno: ', Alumno);
       // return this.http.post<Alumno>(this.registroURL, datos)
-      const headers = new HttpHeaders({
-        'Content-Type': 'text/plain'
-      });
-      return this.http.post(`${this.registroURL}`, datos, {headers});
+      console.log('aquí todo bien');
+      return this.http.post(`${this.registroURL}`, datos);
     }
 
 }

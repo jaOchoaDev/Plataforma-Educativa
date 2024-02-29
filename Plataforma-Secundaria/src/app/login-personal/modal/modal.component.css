@@ -144,3 +144,15 @@
     background-size: cover;
     background-position: center;
 }
+
+.alerta{
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    font-weight: 600;
+    border-radius: 0;
+    font-size: x-small;
+}

@@ -1,62 +1,150 @@
 .parent{
     width: 100%;
-    height: 100vh;
-    /* height: auto; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    /* height: 100vh; */
+    height: auto;
+    /* display: flex; */
+    /* align-items: center;
+    justify-content: center; */
     font-family: 'Work Sans', sans-serif;
 }
 
+/* ----------------------------------------------------------------------- */
 
-.item2 h2{
-    font-weight: 600;
-    font-size: 3rem;
-    text-align: center;
-    padding-top: 2rem;
-    color: var(--colorTexto);
-}
-
-.fondo{
+.info{
     width: 100%;
-    height: 100vh;
-    background-image: linear-gradient(rgba(5, 7, 12, 0.6), rgba(5, 7, 12, 0.6)), url(../../assets/img/alimentos.jpg);
+    height: 80vh;
+    background-image: linear-gradient(to right, #ffffff 35%, #f0e5c91e 70%), url(../../assets/talleres/cf1.jpg);
+    background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    filter: blur(2px);
+    margin-bottom: 5%;
 }
 
-.item2{
-    width: 80vw;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    text-align: justify;
-    justify-content: center;
-    padding: 0 3rem;
-    background-color: rgba(255, 255, 255, 0.45);
-    box-shadow: 5px 5px 15px 0px var(--sombraHover);
-    position: absolute;
+.info h2{
+    font-weight: 600;
+    font-size: 3rem;
+    text-align: left;
+    padding: 3rem 0 0 11rem;
+    color: var(--colorCopy);
 }
 
 .text{
-    /* border-bottom: 2px solid var(--colorCopy); */
-    border-bottom: 1px solid var(--colorBlanco);
-    margin: 1rem 1rem 2rem 1rem;
-}
-.item2:nth-child(n):last-child{
-    padding-bottom: 2rem;
+    width: 45vw;
+    height: auto;
+    margin: 4rem 0 0 4rem;
 }
 
 .text h3{
     font-weight: 600;
-    font-size: 2rem;
+    font-size: 2.3rem;
     text-align: center;
-    color: var(--colorTexto);
+    color: var(--colorCopy);
+    padding-bottom: 2rem;
 }
 
-.item2 .text p{
+.text p{
     font-weight: 600;
-    /* font-size: 1rem; */
+    font-size: 1.3rem;
     color: var(--colorTexto);
+    text-align: justify;
+}
+
+/* ------------------------------------------------------------------------- */
+
+.ingreso{
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+    font-family: 'Work Sans', sans-serif;
+    margin-bottom: 5%;
+}
+
+.text2{
+    width: 45vw;
+    height: 90%;
+    background-color: rgba(240, 229, 201, 0.5);
+    padding: 6rem 4rem 0 8rem;
+    margin-right: 3rem;
+}
+
+.text2 h3{
+    font-weight: 600;
+    font-size: 2.3rem;
+    text-align: center;
+    color: var(--colorCopy);
+    padding-bottom: 2rem;
+}
+
+.text2 p{
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--colorTexto);
+    text-align: justify;
+}
+
+.picture{
+    width: 55%;
+    height: 65%;
+    background-image: url(../../assets/talleres/cf2.jpg);
+    /* background-size: contain; */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: absolute;
+    top: 20%;
+    left: 3%;
+    /* z-index: -1; */
+    /* background-color: rgb(161, 219, 219); */
+}
+
+/* ------------------------------------------------------------------------- */
+
+.egreso{
+    width: 100%;
+    height: 80vh;
+    font-family: 'Work Sans', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5%;
+}
+
+.text3{
+    width: 50%;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url(../../assets/img/fondo.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.text3 h3{
+    font-weight: 600;
+    font-size: 2.3rem;
+    text-align: center;
+    color: var(--colorCopy);
+    padding-bottom: 2rem;
+}
+
+.text3 p{
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--colorTexto);
+    text-align: justify;
+}
+
+.pic{
+    width: 45%;
+    height: 90%;
+    background-image: url(../../assets/talleres/cf3.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
 }

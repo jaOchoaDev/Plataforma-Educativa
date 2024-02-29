@@ -14,5 +14,5 @@ export class LoginDto{
     @IsString()
     @MaxLength(8)
     @MinLength(4)
-    contraseña: string;
+    password: string;
 }

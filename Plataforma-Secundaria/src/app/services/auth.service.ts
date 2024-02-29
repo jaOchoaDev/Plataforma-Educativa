@@ -25,7 +25,7 @@ export class AuthService {
   constructor(private http: HttpClient){}
   
   login(log: any): Observable<any>{
-    console.log('datos recibidos en el service: ', log);
+    console.log('datos recibidos en el service f: ', log);
     return this.http.post(`${this.baseURL}`, log);
   }
 

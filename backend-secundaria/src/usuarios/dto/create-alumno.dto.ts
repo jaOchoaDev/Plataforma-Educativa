@@ -33,7 +33,7 @@ export class CreateAlumnoDto {
     @IsString()
     @MaxLength(8)
     @MinLength(4)
-    contraseña: string;
+    password: string;
 
     // @Transform(({value}) => value.trim())
     @IsNotEmpty()

@@ -29,8 +29,8 @@ export class UsuariosService {
     if(user){
       throw new BadRequestException('Usuario Ya Existe');
     }
-    let hash = await bcryptjs.hash(createUserDto.contraseña, 10);
-    createUserDto.contraseña = hash;
+    let hash = await bcryptjs.hash(createUserDto.password, 10);
+    createUserDto.password = hash;
     //Si el usuario no existe en la BD, lo registra
     return await this.alumnoRepository.save(createUserDto);
   }
