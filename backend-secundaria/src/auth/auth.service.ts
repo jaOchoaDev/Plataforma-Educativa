@@ -10,17 +10,18 @@ export class AuthService {
     constructor(private readonly usersService: UsuariosService, private readonly jwtService: JwtService){}
 
     async login({ usuario, password}: LoginDto) {
+        console.log('datos recibidos en el service: ', usuario, password);
         //Verificar que el usuario exista en la bd para permitir hacer login
         const user = await this.usersService.findOneByUsuario(usuario);
         //Si el usuario NO existe, manda la exception
-        // console.log(user);
+        // console.log('user: ', user);
         if (!user) {
             throw new UnauthorizedException('Usuario Incorrecto');
         }
 
         //Si el usuario existe pasa a comparar la contraseña entrante
         //con la almacenada en la bd con hash
-        const isPasswordValid = await bcryptjs.compare(password, user.contraseña);
+        const isPasswordValid = await bcryptjs.compare(password, user.password);
         //si la contraseña es incorrecta, se manda la exception
         // console.log('isPasswordValid: ', isPasswordValid);
         if (!isPasswordValid) {
@@ -29,7 +30,7 @@ export class AuthService {
         console.log({success: 'Correcto'});
         //si la contraseña no es incorrecta pasa a generar el jwt
         //Generando el JWT
-        const payload = {sub: user.id, username: user.usuario};
+        const payload = {sub: user.id, username: user.usuario, rol: user.rol};
         const token = await this.jwtService.signAsync(payload);
         // return {access_token: await this.jwtService.signAsync(payload)}
         return {
@@ -38,4 +39,7 @@ export class AuthService {
             token,
         };
     }
+
+    
+
 }

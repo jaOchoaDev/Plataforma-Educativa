@@ -54,4 +54,7 @@ export class CreateAlumnoDto {
     @MaxLength(1)
     grupo: string;
 
+    // @IsString()
+    // rol: string;
+
 }
