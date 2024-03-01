@@ -10,8 +10,8 @@ export class Materias{
     @Column()
     nombre_materia: string;
 
-    // @Column()
-    // docente: string;
+    @Column()
+    docente: string;
 
     @Column()
     grado: number;

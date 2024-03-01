@@ -10,7 +10,7 @@ export class AuthService {
     constructor(private readonly usersService: UsuariosService, private readonly jwtService: JwtService){}
 
     async login({ usuario, password}: LoginDto) {
-        console.log('datos recibidos en el service: ', usuario, password);
+        console.log('datos recibidos en el service del b: ', usuario, password);
         //Verificar que el usuario exista en la bd para permitir hacer login
         const user = await this.usersService.findOneByUsuario(usuario);
         //Si el usuario NO existe, manda la exception
@@ -32,14 +32,18 @@ export class AuthService {
         //Generando el JWT
         const payload = {sub: user.id, username: user.usuario, rol: user.rol};
         const token = await this.jwtService.signAsync(payload);
-        // return {access_token: await this.jwtService.signAsync(payload)}
+        const loggedIn = true;
+        
         return {
             success: 'Login Autorizado: ',
             usuario,
             token,
+            loggedIn
         };
     }
 
-    
+    async profile({usuario, rol}: {usuario: string; rol: string}){
+        return await this.usersService.findOneByUsuario(usuario);
+    }
 
 }

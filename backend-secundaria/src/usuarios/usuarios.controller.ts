@@ -11,26 +11,6 @@ export class UsuariosController {
 
     constructor(private usuariosService: UsuariosService){}
 
-    //prueba para ver si sí sirve este metodo y también jala jeje
-    // @Post()
-    // save(@Body() alumno: Alumno){
-    //     return this.usuariosService.createAlumnos(alumno).then(res =>{
-    //         return {success: true, data: res}
-    //     }).catch(error =>{
-    //         throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR);
-    //     })
-    // }
-
-    //usado actualmente
-    // @Post()
-    // save(@Body() alumno: Alumno){
-    //     return this.usuariosService.create(alumno).then(res =>{
-    //         return {success: true, data: res}
-    //     }).catch(error =>{
-    //         throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR);
-    //     })
-    // }
-
     //metodo para registrar usando dto
     @Post()
     async save(@Body() newAlumno:CreateAlumnoDto){
@@ -41,20 +21,6 @@ export class UsuariosController {
             throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR);
         })
     }
-
-
-    //Crear/Agregar nuevo alumno //ESTE SI JALA-----------
-    // @Post()
-    // createAlumno(@Body() newAlumno:CreateAlumnoDto): Promise<Alumno>{
-    //     return this.usuariosService.createAlumnos(newAlumno);
-    // }
-
-    //-----Este se pone en caso de integrar el campo usuario, en lugar del metodo de arriba-------------
-    // @Post()
-    // createAlumno(@Body() newAlumno:CreateAlumnoDto){
-    //     return this.usuariosService.createAlumnos(newAlumno);
-    // }
-    //--------------------------------------------------------
 
 
     // Obtener todos los alumnos

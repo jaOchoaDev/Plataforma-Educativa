@@ -1,5 +1,6 @@
 import { Entity, PrimaryGeneratedColumn, Column, ManyToMany, JoinTable } from 'typeorm';
 import { Materias } from 'src/materias/materias.entity';
+import { Role } from '../common/enums/rol.enum';
 // import { RolEntity } from 'src/rol/rol.entity';
 
 //Aquí se crea la tabla de alumnos en la bd
@@ -32,8 +33,8 @@ export class Alumno {
   @Column()
   grupo: string;
 
-  @Column({default: 'usuario'})
-  rol: string;
+  @Column({type: 'enum', default: Role.USER, enum: Role})
+  rol: Role;
 
   @ManyToMany(() => Materias, materia => materia.estudiante)
   materias: Materias[]

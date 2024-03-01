@@ -3,10 +3,11 @@ import { AuthService } from './auth.service';
 import { LoginDto } from './dto/login.dto';
 import { AuthGuard } from './guard/auth.guard';
 import { Request } from 'express';
-import { Roles } from './decorators/roles.decorator';
-import { RolesGuard } from './guard/roles.guard';
-import { Role } from './enums/rol.enum';
+// import { Roles } from './decorators/roles.decorator';
+// import { RolesGuard } from './guard/roles.guard';
+import { Role } from '../common/enums/rol.enum';
 import { Auth } from './decorators/auth.decorator';
+import { ActiveUser } from 'src/common/decorators/active-user.decorator';
 
 interface RequestWithUser extends Request{
     user: {
@@ -37,17 +38,17 @@ export class AuthController {
     //     return req.user;
     // }
 
+    //Usando 2 decoradores en uno solo(auth)
     @Get('profile')
-    @Auth(Role.ADMIN)
-    profile(
-        @Req() req: RequestWithUser){
-        return req.user;
+    @Auth(Role.USER)
+    profile(@ActiveUser() user){
+        console.log(user);
+        return this.authService.profile(user);
     }
 
     //Prueba para ver si así se da acceso a los usuarios logeados con rol de user
     // @Get('alumnos')
-    // @Roles('user')
-    // @UseGuards(AuthGuard, RolesGuard)
+    // @Auth(Role.USER)
     // alumnos(
     //     @Req() req: RequestWithUser){
     //     return {redirectTo: '/Alumnos'};

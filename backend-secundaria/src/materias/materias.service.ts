@@ -20,4 +20,10 @@ export class MateriasService{
         });
     }
 
+    getMateriasGrado(grado: number) {
+        return this.materiasRepository.find({
+            where: {grado}
+        });
+    }
+
 }
