@@ -8,14 +8,14 @@ import { AppComponent } from './app.component';
 import { BannerComponent } from './banner/banner.component';
 import { InformacionComponent } from './informacion/informacion.component';
 import { TalleresComponent } from './talleres/talleres.component';
-import { LoginPersonalComponent } from './login-personal/login-personal.component';
+// import { LoginPersonalComponent } from './login-personal/login-personal.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { UbicacionComponent } from './ubicacion/ubicacion.component';
 import {GoogleMapsModule } from '@angular/google-maps';
 
 import { MaterialModule } from './material.module';
-import { ModalComponent } from './login-personal/modal/modal.component';
-import { ModalProfesorComponent } from './login-personal/modal-profesor/modal-profesor.component';
+// import { ModalComponent } from './login-personal/modal/modal.component';
+// import { ModalProfesorComponent } from './login-personal/modal-profesor/modal-profesor.component';
 import { CardModule } from '@coreui/angular';
 import { FooterComponent } from './footer/footer.component';
 import { ComputacionComponent } from './computacion/computacion.component';
@@ -35,6 +35,10 @@ import { ContactanosComponent } from './contactanos/contactanos.component';
 import { AlumnosComponent } from './alumnos/alumnos.component';
 import { LogrosComponent } from './logros/logros.component';
 
+import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
+import { LoginAlumnosComponent } from './login-alumnos/login-alumnos.component';
+import { LoginDocentesComponent } from './login-docentes/login-docentes.component';
+
 
 @NgModule({
   declarations: [
@@ -43,11 +47,11 @@ import { LogrosComponent } from './logros/logros.component';
     BannerComponent,
     InformacionComponent,
     TalleresComponent,
-    LoginPersonalComponent,
+    // LoginPersonalComponent,
     ContactoComponent,
     UbicacionComponent,
-    ModalComponent,
-    ModalProfesorComponent,
+    // ModalComponent,
+    // ModalProfesorComponent,
     FooterComponent,
     ComputacionComponent,
     MateriaComponent,
@@ -62,24 +66,27 @@ import { LogrosComponent } from './logros/logros.component';
     ContactanosComponent,
     AlumnosComponent,
     LogrosComponent,
+    LoginAlumnosComponent,
+    LoginDocentesComponent
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     FormsModule,
-    // FormGroup,
     GoogleMapsModule,
     BrowserAnimationsModule,
     MaterialModule,
     AppRoutingModule,
     CardModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDialogModule
   ],
   exports: [
     HeaderComponent,
     FooterComponent,
     HeaderComponent
   ],
+  // providers: [ModalComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -9,20 +9,17 @@
         <nav>
             <ul class="main-menu">
                 <li id="item"><a routerLink="">INICIO</a></li>
-                    <!-- este es de prueba-->
-                <!-- <li id="item"><a routerLink="Alumnos">ALUMNOS</a></li>  -->
-                    <!-- este es el bueno-->
-                <li id="item"><a (click)="openDialogAlumno()">ALUMNOS</a></li> 
-
-                <li id="item"><a (click)="openDialogProfesor()">PROFESORES</a></li>
-
+                <li id="item"><a routerLink="LoginAlumnos">ALUMNOS</a></li>
+                <li id="item"><a routerLink="LoginDocentes">PROFESORES</a></li>
                 <li id="item"><a routerLink="Escuela">ESCUELA</a></li>
 
                 <!-- Usando fragmentos de URL(no funciona) -->
                 <!-- <li id="item"><a routerLink="/#Footer">CONTACTO</a></li> -->
                 <li id="item"><a routerLink="Contactanos">CONTACTO</a></li>
+
                 <!-- //Botón para hacer logout -->
                 <!-- <li id="item"><a class="logout">CERRAR SESIÓN</a></li> -->
+                <li *ngIf="authService.isLoggedIn()" id="item"><a (click)="logout()" class="logout">CERRAR SESIÓN</a></li>
             </ul>
         </nav>
     </div>

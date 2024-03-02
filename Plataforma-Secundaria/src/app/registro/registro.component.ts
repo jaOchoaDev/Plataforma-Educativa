@@ -52,9 +52,21 @@ export class RegistroComponent implements OnInit{
 
   constructor(private registroService: RegistroService, private fb: FormBuilder){}
 
+  // registerForm: FormGroup;
+  registerForm = new FormGroup({
+    nom: new FormControl(''),
+    apellido_Paterno: new FormControl(''),
+    apellido_Materno: new FormControl(''),
+    usuario: new FormControl(''),
+    contraseña: new FormControl(''),
+    grado: new FormControl(''),
+    taller: new FormControl(''),
+    grupo: new FormControl('')
+  })
+
   ngOnInit(): void {
     this.registerForm = this.fb.group({
-      nombre: ['', [Validators.required, Validators.maxLength(40)]],
+      nom: ['', [Validators.required, Validators.maxLength(40)]],
       apellido_Paterno: ['', [Validators.required, Validators.maxLength(40)]],
       apellido_Materno: ['', [Validators.required, Validators.maxLength(40)]],
       usuario: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(15)]],
@@ -65,16 +77,6 @@ export class RegistroComponent implements OnInit{
     });
   }
 
-  registerForm = new FormGroup({
-    nombre: new FormControl(''),
-    apellido_Paterno: new FormControl(''),
-    apellido_Materno: new FormControl(''),
-    usuario: new FormControl(''),
-    contraseña: new FormControl(''),
-    grado: new FormControl(''),
-    taller: new FormControl(''),
-    grupo: new FormControl('')
-  })
 
   onCreate(){
     console.log('datos a enviar al servicio: ', this.registerForm.value);

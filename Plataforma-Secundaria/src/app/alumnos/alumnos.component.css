@@ -118,3 +118,9 @@ p {
     font-weight: 400;
     color: var(--colorTexto);
 }
+
+.grado{
+    font-weight: 400;
+    font-size: 0.8rem;
+    color: var(--colorTexto);
+}

@@ -12,7 +12,7 @@
       <div class="input_container">
         <label class="input_label" for="nombre">Nombre</label>
         <input required placeholder="Nombre" name="nombre" type="text" class="input_field" id="nom"
-            autocomplete="on" formControlName="nombre">
+            autocomplete="on" formControlName="nom">
         <div class="alerta alert alert-danger" *ngIf="registerForm.get('nombre')?.touched && registerForm.get('nombre')?.errors?.['required']">Nombre requerido</div>
         <!-- <div class="alerta alert alert-danger" *ngIf="registerForm.get('nombre')?.errors?.['maxLength']">Nombre requerido</div> -->
       </div>

@@ -4,8 +4,8 @@
     
         <div class="form">
             <label for="nombre">Nombre</label>
-            <input class="input inp" name="nombre" id="nombre" autocomplete="false" placeholder="Escribe tu nombre aquí" type="text" formControlName="nombre" autocomplete="off">
-            <div class="alerta alert alert-danger" *ngIf="contactForm.get('nombre')?.errors?.['required']">Nombre requerido</div>
+            <input class="input inp" name="nombre" id="nombre" placeholder="Escribe tu nombre aquí" type="text" formControlName="nombre" autofocus="off" autocomplete="off">
+            <!-- <div class="alerta alert alert-danger" *ngIf="contactForm.get('nombre')?.errors?.['required']">Nombre requerido</div> -->
             <div class="alerta alert alert-danger" *ngIf="contactForm.get('nombre')?.errors?.['maxlength']">Nombre muy largo</div>
         </div>
     

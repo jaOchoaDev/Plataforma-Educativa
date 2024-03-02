@@ -10,6 +10,9 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
 
+  //sirve para mostrar o no, el header y footer en el login
+  // mostrarLogins: boolean = true;
+
   //Este código es para que al hacer cambio de páginas siempre me redireccione hasta arriba de la página.
   // constructor(private router: Router) {
   //   this.router.events

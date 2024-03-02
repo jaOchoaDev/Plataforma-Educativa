@@ -1,24 +1,26 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { AuthService } from '../../services/auth.service';
+import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
-import { MatDialogRef } from '@angular/material/dialog';
-
 
 @Component({
-  selector: 'app-modal',
-  templateUrl: './modal.component.html',
-  styleUrls: ['./modal.component.css']
+  selector: 'app-login-docentes',
+  templateUrl: './login-docentes.component.html',
+  styleUrls: ['./login-docentes.component.css']
 })
-
-//componente de login
-export class ModalComponent implements OnInit{
-
+export class LoginDocentesComponent {
   loginForm: FormGroup;
 
   // alumnoService = inject(AuthService);
 
-  constructor(public authService: AuthService, private fb: FormBuilder, private router: Router, private dialogRef: MatDialogRef<ModalComponent>){
+  // constructor(public authService: AuthService, private fb: FormBuilder, private router: Router,
+  //   public dialogRef: MatDialogRef<LoginAlumnosComponent>){
+  //   this.loginForm = new FormGroup({
+  //     usuario: new FormControl(''),
+  //     password: new FormControl('')
+  //   });    
+  // }
+  constructor(public authService: AuthService, private fb: FormBuilder, private router: Router){
     this.loginForm = new FormGroup({
       usuario: new FormControl(''),
       password: new FormControl('')
@@ -42,12 +44,12 @@ export class ModalComponent implements OnInit{
     console.log('datos de f a enviar al servicio f: ', user)
     this.authService.login(user).subscribe({
       next: response =>{
-        const nameAlumno = response.usuario;
+        // const nameAlumno = response.usuario;
         // console.log('nombre de usuario: ', nameAlumno);
         this.router.navigate(['Alumnos']);
         console.log('Login Correcto', response);
 
-        this.dialogRef.close();
+        // this.dialogRef.close();
         this.loginForm.reset();
         
       }, error: err =>{
@@ -55,5 +57,4 @@ export class ModalComponent implements OnInit{
       }
     });
   }
-
 }

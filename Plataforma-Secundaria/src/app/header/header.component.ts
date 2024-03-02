@@ -2,6 +2,7 @@ import { Component, ElementRef, HostListener } from '@angular/core';
 import { ModalComponent } from '../login-personal/modal/modal.component';
 import { ModalProfesorComponent } from '../login-personal/modal-profesor/modal-profesor.component';
 import {MatDialog} from '@angular/material/dialog';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -11,7 +12,7 @@ import {MatDialog} from '@angular/material/dialog';
 
 export class HeaderComponent {
   
-  constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog, public authService: AuthService) {}
   // constructor(public dialog: MatDialog, private el: ElementRef) {}
   // constructor(private el: ElementRef) {}
 
@@ -28,17 +29,21 @@ export class HeaderComponent {
     }
   }
 
-  openDialogAlumno(): void {
-    const dialogRef = this.dialog.open(ModalComponent, {
-      width: '60vw',
-      height: '70vh'
-    });
-  }
-  openDialogProfesor(): void {
-    const dialogRef = this.dialog.open(ModalProfesorComponent, {
-      width: '60vw',
-      height: '70vh'
-    });
+  // openDialogAlumno(): void {
+  //   const dialogRef = this.dialog.open(ModalComponent, {
+  //     width: '60vw',
+  //     height: '70vh'
+  //   });
+  // }
+  // openDialogProfesor(): void {
+  //   const dialogRef = this.dialog.open(ModalProfesorComponent, {
+  //     width: '60vw',
+  //     height: '70vh'
+  //   });
+  // }
+
+  logout(){
+    this.authService.logout();
   }
 
   // goToFooter() {

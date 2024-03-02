@@ -8,9 +8,9 @@ import { Observable } from 'rxjs';
 })
 export class AuthService {
 
-  // private httpClient = inject(HttpClient);
   private baseURL = 'http://localhost:3000/auth/login';
-  // private baseURL: string;
+  private loggedIn = false;
+  public gr: any;
 
   // constructor() {
   //   this.baseURL = 'http://localhost:3000/auth';
@@ -27,6 +27,22 @@ export class AuthService {
   login(log: any): Observable<any>{
     console.log('datos recibidos en el service f: ', log);
     return this.http.post(`${this.baseURL}`, log);
+  }
+
+  //obtener el grado
+  // setGrado(value: any){
+  //   this.gr = value;
+  // }
+  // getGrado(){
+  //   return this.gr;
+  // }
+
+  logout(){
+    this.loggedIn = false;
+  }
+
+  isLoggedIn() {
+    return this.loggedIn;
   }
 
 }
