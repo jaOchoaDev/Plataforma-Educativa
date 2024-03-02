@@ -3,6 +3,7 @@ import { UsuariosService } from 'src/usuarios/usuarios.service';
 import { LoginDto } from './dto/login.dto';
 import * as bcryptjs from 'bcryptjs';
  import { JwtService } from "@nestjs/jwt";
+import { DocentesService } from 'src/docentes/docentes.service';
 
 @Injectable()
 export class AuthService {
@@ -13,6 +14,12 @@ export class AuthService {
         console.log('datos recibidos en el service del b: ', usuario, password);
         //Verificar que el usuario exista en la bd para permitir hacer login
         const user = await this.usersService.findOneByUsuario(usuario);
+        
+        //-----LOGICA PARA UE TAMBIÉN HAGA LOGIN DE DOCENTES
+
+
+        //--------------------.----------------
+
         //Si el usuario NO existe, manda la exception
         // console.log('user: ', user);
         if (!user) {
@@ -33,12 +40,14 @@ export class AuthService {
         const payload = {sub: user.id, username: user.usuario, rol: user.rol};
         const token = await this.jwtService.signAsync(payload);
         const loggedIn = true;
+        const gr = user.grado;
         
         return {
             success: 'Login Autorizado: ',
             usuario,
             token,
-            loggedIn
+            loggedIn,
+            gr
         };
     }
 

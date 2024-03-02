@@ -5,7 +5,7 @@ export class LoginDto{
     @Transform(({value}) => value.trim())
     @IsNotEmpty()
     @IsString()
-    @MaxLength(15)
+    @MaxLength(45)
     @MinLength(4)
     usuario: string;
 

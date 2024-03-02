@@ -7,8 +7,7 @@ import { Repository } from "typeorm";
 @Injectable()
 export class MateriasService{
 
-    constructor(@InjectRepository(Materias) private materiasRepository: Repository<Materias>,
-        private usuariosService: UsuariosService){}
+    constructor(@InjectRepository(Materias) private materiasRepository: Repository<Materias>){}
 
     getMaterias(){
         return this.materiasRepository.find();

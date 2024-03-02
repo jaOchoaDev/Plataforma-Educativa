@@ -25,7 +25,7 @@ export class CreateAlumnoDto {
     @Transform(({value}) => value.trim())
     @IsNotEmpty()
     @IsString()
-    @MaxLength(15)
+    @MaxLength(45)
     @MinLength(4)
     usuario: string;
 
@@ -55,6 +55,7 @@ export class CreateAlumnoDto {
     @MaxLength(1)
     grupo: string;
 
+    //Esta se pone cuando se quiere agregar otro usuario que no sea de rol usuario
     // @IsString()
     // rol: Role;
 

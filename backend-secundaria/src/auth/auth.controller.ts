@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post, UseGuards, Req } from '@nestjs/common';
+import { Body, Controller, Get, Post, UseGuards, Req, Response } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { LoginDto } from './dto/login.dto';
 import { AuthGuard } from './guard/auth.guard';
@@ -24,10 +24,15 @@ export class AuthController {
 
     @Post('login')
     login(@Body() loginDto: LoginDto){
-        console.log('datos recibidos del f al back: ', loginDto);
-        
+        console.log('datos recibidos del f al back: ', loginDto);        
         return this.authService.login(loginDto);
     }
+    // @Post('login')
+    // login(@Body() loginDto: LoginDto, @Request() req, @Response() res){
+    //     console.log('datos recibidos del f al back: ', loginDto);        
+    //     res.status(200).send();
+    //     return this.authService.login(loginDto);        
+    // }
 
 
     // @Get('profile')
@@ -47,11 +52,11 @@ export class AuthController {
     }
 
     //Prueba para ver si así se da acceso a los usuarios logeados con rol de user
-    // @Get('alumnos')
-    // @Auth(Role.USER)
-    // alumnos(
-    //     @Req() req: RequestWithUser){
-    //     return {redirectTo: '/Alumnos'};
-    // }
+    @Get('materias')
+    @Auth(Role.USER)
+    materias(@ActiveUser() user){
+        console.log('respuesta del activeuser: ', user);
+        return this.authService.profile(user);        
+    }
 
 }
