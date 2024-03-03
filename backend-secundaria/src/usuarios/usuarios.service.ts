@@ -25,6 +25,7 @@ export class UsuariosService {
   //este método también jala ---------------------usando actualmente
   async create(createUserDto: CreateAlumnoDto) {
     //verificar que el usuario exista(o no) en la BD
+    console.log(createUserDto);
     const user = await this.findOneByUsuario(createUserDto.usuario);
     if(user){
       throw new BadRequestException('Usuario Ya Existe');

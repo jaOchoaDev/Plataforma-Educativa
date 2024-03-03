@@ -3,10 +3,8 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UsuariosModule } from './usuarios/usuarios.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
+// import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
-import { DocentesModule } from './docentes/docentes.module';
-import { MateriasModule } from './materias/materias.module';
-// import { RolModule } from './rol/rol.module';
 
 @Module({
   imports: [
@@ -15,16 +13,15 @@ import { MateriasModule } from './materias/materias.module';
       host: 'localhost',
       port: 3306,
       username: 'root',
-      password: 'ochoaayala',
+      password: 'password',
+      //password: 'ochoaayala',
       database: 'secundaria',
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,
     }),
     UsuariosModule,
+    // UsersModule,
     AuthModule,
-    DocentesModule,
-    MateriasModule,
-    // RolModule
   ],
   controllers: [AppController],
   providers: [AppService],

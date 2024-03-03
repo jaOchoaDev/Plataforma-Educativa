@@ -14,10 +14,12 @@ export class UsuariosController {
     //metodo para registrar usando dto
     @Post()
     async save(@Body() newAlumno:CreateAlumnoDto){
+        console.log('Entro?', newAlumno);
         // console.log('Datos recibidos del front: ', newAlumno);
         return await this.usuariosService.create(newAlumno).then(res => {
             return { success: true, data: res }
         }).catch(error => {
+            console.log(error);
             throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR);
         })
     }

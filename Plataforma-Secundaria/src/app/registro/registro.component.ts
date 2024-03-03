@@ -50,10 +50,11 @@ export class RegistroComponent implements OnInit{
 
   //---------------------USANDO FORMGROUP------------------------------
 
-  constructor(private registroService: RegistroService, private fb: FormBuilder){}
+  registerForm: FormGroup;
 
-  // registerForm: FormGroup;
-  registerForm = new FormGroup({
+  constructor(private registroService: RegistroService, private fb: FormBuilder){
+      // registerForm: FormGroup;
+  this.registerForm = new FormGroup({
     nom: new FormControl(''),
     apellido_Paterno: new FormControl(''),
     apellido_Materno: new FormControl(''),
@@ -63,6 +64,9 @@ export class RegistroComponent implements OnInit{
     taller: new FormControl(''),
     grupo: new FormControl('')
   })
+  }
+
+
 
   ngOnInit(): void {
     this.registerForm = this.fb.group({
@@ -79,12 +83,26 @@ export class RegistroComponent implements OnInit{
 
 
   onCreate(){
+    console.log(typeof this.registerForm.value.apellido_Materno)
     console.log('datos a enviar al servicio: ', this.registerForm.value);
-    this.registroService.registrar(this.registerForm.value).subscribe({
+    const data = {
+      nombre: this.registerForm.value.nom,
+      apellido_paterno: this.registerForm.value.apellido_Paterno,
+      apellido_materno: this.registerForm.value.apellido_Materno,
+      usuario: this.registerForm.value.usuario,
+      contraseña: this.registerForm.value.contraseña,
+      grado: this.registerForm.value.grado,
+      taller: this.registerForm.value.taller,
+      grupo: this.registerForm.value.grupo,
+    }
+    this.registroService.registrar(data).subscribe({
       next: response=>{
         console.log('Alumno Registrado', response);
       }, error: err=>{
         console.log('Error de Registro', err);
+        if (err.error) {
+          console.log('Detalles del error:', err.error);
+        }
       }
     });
   }
