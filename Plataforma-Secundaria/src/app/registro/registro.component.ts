@@ -49,20 +49,31 @@ export class RegistroComponent implements OnInit{
 
 
   //---------------------USANDO FORMGROUP------------------------------
-
-  constructor(private registroService: RegistroService, private fb: FormBuilder){}
+registerForm: FormGroup;
+  constructor(private registroService: RegistroService, private fb: FormBuilder){
+    this.registerForm = new FormGroup({
+      nom: new FormControl(''),
+      apellido_Paterno: new FormControl(''),
+      apellido_Materno: new FormControl(''),
+      usuario: new FormControl(''),
+      contraseña: new FormControl(''),
+      grado: new FormControl(''),
+      taller: new FormControl(''),
+      grupo: new FormControl('')
+    });
+  }
 
   // registerForm: FormGroup;
-  registerForm = new FormGroup({
-    nom: new FormControl(''),
-    apellido_Paterno: new FormControl(''),
-    apellido_Materno: new FormControl(''),
-    usuario: new FormControl(''),
-    contraseña: new FormControl(''),
-    grado: new FormControl(''),
-    taller: new FormControl(''),
-    grupo: new FormControl('')
-  })
+  // registerForm = new FormGroup({
+  //   nom: new FormControl(''),
+  //   apellido_Paterno: new FormControl(''),
+  //   apellido_Materno: new FormControl(''),
+  //   usuario: new FormControl(''),
+  //   contraseña: new FormControl(''),
+  //   grado: new FormControl(''),
+  //   taller: new FormControl(''),
+  //   grupo: new FormControl('')
+  // });
 
   ngOnInit(): void {
     this.registerForm = this.fb.group({

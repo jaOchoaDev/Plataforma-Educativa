@@ -18,6 +18,7 @@ export class UsuariosController {
         return await this.usuariosService.create(newAlumno).then(res => {
             return { success: true, data: res }
         }).catch(error => {
+            console.log(error);
             throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR);
         })
     }

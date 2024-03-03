@@ -41,13 +41,15 @@ export class AuthService {
         const token = await this.jwtService.signAsync(payload);
         const loggedIn = true;
         const gr = user.grado;
+        const r = user.rol;
         
         return {
             success: 'Login Autorizado: ',
             usuario,
             token,
             loggedIn,
-            gr
+            gr,
+            r
         };
     }
 

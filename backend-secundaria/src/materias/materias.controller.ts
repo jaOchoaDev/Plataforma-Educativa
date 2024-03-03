@@ -5,7 +5,7 @@ import { Auth } from "../auth/decorators/auth.decorator";
 import { Role } from '../common/enums/rol.enum';
 
 //Declarando el @Auth para que sólo permita roles de usuario
-// @Auth(Role.USER)
+@Auth(Role.USER)
 @Controller('materias')
 export class MateriasController{
 
