@@ -13,7 +13,7 @@ export class UsuariosController {
 
     //metodo para registrar usando dto
     @Post()
-    async save(@Body() newAlumno:CreateAlumnoDto){
+    async save(@Body() newAlumno: CreateAlumnoDto){
         console.log('Entro?', newAlumno);
         // console.log('Datos recibidos del front: ', newAlumno);
         return await this.usuariosService.create(newAlumno).then(res => {

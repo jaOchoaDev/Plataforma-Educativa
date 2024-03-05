@@ -75,7 +75,8 @@ export class RegistroComponent implements OnInit{
       apellido_Materno: ['', [Validators.required, Validators.maxLength(40)]],
       usuario: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(15)]],
       contraseña: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(8)]],
-      grado: ['', [Validators.required, Validators.min(1), Validators.max(3)]],
+      //grado como es un numero debe inicializare con 0 (numero cualquiera), porque si lo inicializas con comillas se toma como una cadena de caracteres (String) 
+      grado: [0, [Validators.required, Validators.min(1), Validators.max(3)]],
       taller: ['', [Validators.required]],
       grupo: ['', [Validators.required, Validators.maxLength(1)]],
     });
@@ -85,12 +86,12 @@ export class RegistroComponent implements OnInit{
   onCreate(){
     console.log(typeof this.registerForm.value.apellido_Materno)
     console.log('datos a enviar al servicio: ', this.registerForm.value);
-    const data = {
+    const data: Alumno = {
       nombre: this.registerForm.value.nom,
       apellido_paterno: this.registerForm.value.apellido_Paterno,
       apellido_materno: this.registerForm.value.apellido_Materno,
       usuario: this.registerForm.value.usuario,
-      contraseña: this.registerForm.value.contraseña,
+      password: this.registerForm.value.contraseña,
       grado: this.registerForm.value.grado,
       taller: this.registerForm.value.taller,
       grupo: this.registerForm.value.grupo,

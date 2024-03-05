@@ -3,7 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Alumno } from './usuarios.entity';
 import { Repository } from 'typeorm';
 import { CreateAlumnoDto } from './dto/create-alumno.dto';
-import * as bcryptjs from 'bcryptjs';
+import * as bcrypt from 'bcryptjs';
 // import { UpdateAlumnoDto } from './dto/update-alumno.dto';
 
 @Injectable()
@@ -30,8 +30,16 @@ export class UsuariosService {
     if(user){
       throw new BadRequestException('Usuario Ya Existe');
     }
-    let hash = await bcryptjs.hash(createUserDto.password, 10);
-    createUserDto.password = hash;
+    try {
+      const hashedPassword = await bcrypt.hash(createUserDto.password, 10);
+      createUserDto.password = hashedPassword;
+      // Resto de la lógica aquí
+    } catch (error) {
+      console.error('Error al hacer el hash de la contraseña:', error);
+      // Puedes lanzar una excepción o manejar el error de alguna manera
+    }
+    
+    
     //Si el usuario no existe en la BD, lo registra
     return await this.alumnoRepository.save(createUserDto);
   }

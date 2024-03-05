@@ -3,10 +3,10 @@
 export class Alumno {
     // id?: number;
     nombre: string;
-    apellido_Paterno: string;
-    apellido_Materno: string;
+    apellido_paterno: string;
+    apellido_materno: string;
     usuario: string;
-    contraseña: string;
+    password: string;
     grado: number;
     taller: string;
     grupo: string;
@@ -14,10 +14,10 @@ export class Alumno {
     constructor(nombre: string, apellidoPaterno: string, apellidoMaterno: string, usuario: string,
     contraseña: string, grado: number, taller: string, grupo: string){
         this.nombre = nombre;
-        this.apellido_Paterno = apellidoPaterno;
-        this.apellido_Materno = apellidoMaterno;
+        this.apellido_paterno = apellidoPaterno;
+        this.apellido_materno = apellidoMaterno;
         this.usuario = usuario;
-        this.contraseña = contraseña;
+        this.password = contraseña;
         this.grado = grado;
         this.taller = taller;
         this.grupo = grupo;        

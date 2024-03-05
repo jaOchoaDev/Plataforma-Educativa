@@ -28,30 +28,11 @@ export class RegistroService {
     //   return this.http.post<any>(`${this.registroURL}`, alumno);
     // }
 
-    registrar(datos: any): Observable<any>{
-      console.log('Datos que llegan al servicio:', datos);
-    
-      // Crear un objeto FormData
-      const formData: FormData = new FormData();
-    
-      // Agregar datos al objeto FormData
-      Object.keys(datos).forEach(key => {
-        formData.append(key, datos[key]);
-      });
-    
-      // Agregar otros datos si es necesario
-    
-      // Crear cabeceras
-      const headers = {
-        // No es necesario establecer 'Content-Type' para FormData, el navegador lo manejará automáticamente
-        'Content-Type': 'multipart/form-data',
-        // Agregar otras cabeceras si es necesario
-      };
-
-      console.log(formData, 'fd');
+    //Lo unico que hice fue tipar el POST que ahora es regresa un Observable de tipo Alumno
+    public registrar(body: Alumno): Observable<Alumno>{
     
       // Realizar la solicitud HTTP POST
-      return this.http.post<any>(this.registroURL, datos, { headers: headers });
+      return this.http.post<Alumno>(this.registroURL, body);
     }
 
 }
