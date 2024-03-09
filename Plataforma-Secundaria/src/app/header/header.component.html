@@ -22,5 +22,8 @@
                 <li *ngIf="authService.isLoggedIn()" id="item"><a (click)="logout()" class="logout">CERRAR SESIÓN</a></li>
             </ul>
         </nav>
+        <button (click)="logout()">
+            Salir
+        </button>
     </div>
 </header>

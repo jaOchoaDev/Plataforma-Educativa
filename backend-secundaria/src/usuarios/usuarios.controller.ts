@@ -27,8 +27,8 @@ export class UsuariosController {
 
     // Obtener todos los alumnos
     @Get()
-    getAlumnos(): Promise<Alumno[]>{
-        return this.usuariosService.getAlumnos();
+    async getAlumnos(): Promise<Alumno[]>{
+        return await this.usuariosService.getAlumnos();
     }
 
     // Obtener un alumno por id
@@ -39,8 +39,8 @@ export class UsuariosController {
 
     // Obtener un alumno por usuario
     @Get(':usuario')
-    getUsuario(@Param('usuario') usuario: string): Promise<Alumno>{
-        return this.usuariosService.getUsuario(usuario);
+    async getUsuario(@Param('usuario') usuario: string): Promise<Alumno>{
+        return await this.usuariosService.getUsuario(usuario);
     }
 
     

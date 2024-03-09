@@ -50,6 +50,7 @@ export class LoginAlumnosComponent {
 
         if(loggedin && response.rol === 'usuario'){
           this.router.navigate(['/Alumnos']);
+          localStorage.setItem('nameUsuario', response.usuario);
         }
 
         if(loggedin && response.rol === 'profesor'){

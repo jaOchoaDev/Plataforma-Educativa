@@ -19,8 +19,9 @@ export class MateriasService{
         });
     }
 
-    getMateriasGrado(grado: number) {
-        return this.materiasRepository.find({
+    async getMateriasGrado(grado: number) {
+        console.log('entro aqui');
+        return await this.materiasRepository.find({
             where: {grado}
         });
     }

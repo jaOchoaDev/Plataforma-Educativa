@@ -69,16 +69,18 @@ export class UsuariosService {
 
   //----------------------------------------------------
   //Obtener Un solo alumno pero con usuario/n.control
-  getUsuario(usuario: string){
-    return this.alumnoRepository.findOne({
+  async getUsuario(usuario: string){
+    const user = await this.alumnoRepository.findOne({
       where: {usuario}
     });
+    console.log(user);
+    return user;
   }
   //----------------------------------------------------
 
   //Obtener todos los alumnos
-  getAlumnos(){
-    return this.alumnoRepository.find();
+  async getAlumnos(){
+    return await this.alumnoRepository.find();
   }
 
 }

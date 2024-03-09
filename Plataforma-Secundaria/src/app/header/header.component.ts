@@ -3,6 +3,7 @@ import { ModalComponent } from '../login-personal/modal/modal.component';
 import { ModalProfesorComponent } from '../login-personal/modal-profesor/modal-profesor.component';
 import {MatDialog} from '@angular/material/dialog';
 import { AuthService } from '../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -12,7 +13,8 @@ import { AuthService } from '../services/auth.service';
 
 export class HeaderComponent {
   
-  constructor(public dialog: MatDialog, public authService: AuthService) {}
+  constructor(public dialog: MatDialog, public authService: AuthService,
+              private router: Router) {}
   // constructor(public dialog: MatDialog, private el: ElementRef) {}
   // constructor(private el: ElementRef) {}
 
@@ -43,7 +45,9 @@ export class HeaderComponent {
   // }
 
   logout(){
-    this.authService.logout();
+    localStorage.removeItem('nameUsuario');
+    this.router.navigate(['./LoginAlumnos']);
+    console.log('Salio');
   }
 
   // goToFooter() {

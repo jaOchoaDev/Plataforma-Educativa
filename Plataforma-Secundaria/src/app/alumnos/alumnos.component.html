@@ -7,11 +7,11 @@
             <h2>Bienvenido</h2>
         </div>
 
-        <div class="info">
-            <label for="alumno">Alumno: </label>
-            <label for="grado">Grado: </label>
-            <label for="grupo">Grupo: </label>
-            <label for="taller">Taller: </label>
+        <div class="info" *ngIf="alumno">
+            <label for="alumno">Alumno: {{alumno.nombre}} {{alumno.apellido_paterno}} </label>
+            <label for="grado">Grado: {{alumno.grado}}</label>
+            <label for="grupo">Grupo: {{alumno.grupo}}</label>
+            <label for="taller">Taller: {{alumno.taller}}</label>
         </div>
 
     </div>
@@ -28,14 +28,14 @@
             </div>
         </div> -->
 
-        <div class="card">
+        <div class="card" *ngFor="let materia of materias">
             <div class="image-container">
                 <img src="../../assets/img/alimentos.jpg" alt="Imagen de la tarjeta">
             </div>
             <div class="card-content">
-                <h2>NOMBRE MATERIA</h2>
-                <p>Impartida por:</p>
-                <p class="grado">Grado:</p>
+                <h2>NOMBRE MATERIA: {{materia.nombre_materia}}</h2>
+                <p>Impartida por: {{materia.docente}}</p>
+                <p class="grado">Grado: {{materia.grado}}</p>
             </div>
         </div>
 

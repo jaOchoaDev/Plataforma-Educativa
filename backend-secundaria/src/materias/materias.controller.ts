@@ -26,8 +26,8 @@ export class MateriasController{
 
     //OBTENER MATERIAS POR GRADO ESCOLAR
     @Get('grado/:grado')
-    getMateriasgRADO(@Param('grado', ParseIntPipe) grado: number): Promise<Materias[]>{
-        return this.materiasService.getMateriasGrado(grado);
+    async getMateriasgRADO(@Param('grado', ParseIntPipe) grado: number): Promise<Materias[]>{
+        return await this.materiasService.getMateriasGrado(grado);
     }
 
 
