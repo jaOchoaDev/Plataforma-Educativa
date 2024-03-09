@@ -11,7 +11,7 @@ export class Alumno {
     taller: string;
     grupo: string;
 
-    constructor(nombre: string, apellidoPaterno: string, apellidoMaterno: string, usuario: string,
+    /*constructor(nombre: string, apellidoPaterno: string, apellidoMaterno: string, usuario: string,
     contraseña: string, grado: number, taller: string, grupo: string){
         this.nombre = nombre;
         this.apellido_paterno = apellidoPaterno;
@@ -21,6 +21,6 @@ export class Alumno {
         this.grado = grado;
         this.taller = taller;
         this.grupo = grupo;        
-    }
+    }*/
 
 }

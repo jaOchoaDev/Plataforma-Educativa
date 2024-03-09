@@ -4,12 +4,15 @@ import { Alumno } from './usuarios.entity';
 import { Repository } from 'typeorm';
 import { CreateAlumnoDto } from './dto/create-alumno.dto';
 import * as bcrypt from 'bcryptjs';
+import { Docentes } from 'src/docentes/docentes.entity';
 // import { UpdateAlumnoDto } from './dto/update-alumno.dto';
 
 @Injectable()
 export class UsuariosService {
   
-  constructor(@InjectRepository(Alumno) private readonly alumnoRepository: Repository<Alumno>) {}
+  constructor(@InjectRepository(Alumno) private readonly alumnoRepository: Repository<Alumno>,
+              @InjectRepository(Docentes) private readonly docentesRepository: Repository<Docentes>
+  ) {}
 
   //otro metodo para crear alumnos usando asyn
   // async createAlumnos(alumno: Alumno): Promise<Alumno>{
@@ -56,6 +59,13 @@ export class UsuariosService {
   async findOneByUsuario(usuario: string){
     return await this.alumnoRepository.findOneBy({usuario});
   }
+
+
+  //Para docentes
+  async findOneDocente(usuario: string){
+    return await this.docentesRepository.findOneBy({nombre_docente: usuario});
+  }
+
 
   //----------------------------------------------------
   //Obtener Un solo alumno pero con usuario/n.control

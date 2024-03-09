@@ -2,7 +2,7 @@ import { Component, OnInit, inject } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
-import { MatDialogRef } from '@angular/material/dialog';
+import * as jwt from 'jwt-decode';
 
 @Component({
   selector: 'app-login-alumnos',
@@ -44,8 +44,17 @@ export class LoginAlumnosComponent {
 
         const loggedin = response.loggedIn;
         // console.log('loggedIn desde service f: ', loggedin);
-        if(loggedin){
+
+        const decodedToken = jwt.jwtDecode(response.token);
+        console.log(decodedToken.aud, 'token desarmado ');
+
+        if(loggedin && response.rol === 'usuario'){
           this.router.navigate(['/Alumnos']);
+        }
+
+        if(loggedin && response.rol === 'profesor'){
+          this.router.navigate(['/Alumnos']);
+          console.log('Si entro a profesores');
         }
 
         // const g = response.gr;        
