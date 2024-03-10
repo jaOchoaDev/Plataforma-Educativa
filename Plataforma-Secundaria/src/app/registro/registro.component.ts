@@ -4,7 +4,7 @@ import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms'
 // import { HttpClient} from '@angular/common/http';
 // import { FormularioService } from '../formulario.service';
 import { RegistroService } from '../services/registro.service';
-import { Router } from '@angular/router';
+// import { Router } from '@angular/router';
 import { Alumno } from '../models/alumno';
 
 // import { Alumno } from '../interfaces/alumno';
