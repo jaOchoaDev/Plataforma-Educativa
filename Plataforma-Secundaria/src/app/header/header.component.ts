@@ -13,7 +13,8 @@ import { Router } from '@angular/router';
 
 export class HeaderComponent {
   
-  constructor(public dialog: MatDialog, public authService: AuthService,
+  constructor(public dialog: MatDialog,
+              public authService: AuthService,
               private router: Router) {}
   // constructor(public dialog: MatDialog, private el: ElementRef) {}
   // constructor(private el: ElementRef) {}
@@ -31,28 +32,16 @@ export class HeaderComponent {
     }
   }
 
-  // openDialogAlumno(): void {
-  //   const dialogRef = this.dialog.open(ModalComponent, {
-  //     width: '60vw',
-  //     height: '70vh'
-  //   });
-  // }
-  // openDialogProfesor(): void {
-  //   const dialogRef = this.dialog.open(ModalProfesorComponent, {
-  //     width: '60vw',
-  //     height: '70vh'
-  //   });
-  // }
+  isLoggedIn(){
+    return this.authService.isLoggedIn;
+  }
 
   logout(){
     localStorage.removeItem('nameUsuario');
-    this.router.navigate(['./LoginAlumnos']);
+    this.authService.logout();
+    this.router.navigate(['./']);
+    // this.router.navigate(['./LoginAlumnos']);
     console.log('Salio');
   }
-
-  // goToFooter() {
-  //   const footer = this.el.nativeElement.querySelector('#footer');
-  //   footer.scrollIntoView({ behavior: 'smooth' });
-  // }
 
 }

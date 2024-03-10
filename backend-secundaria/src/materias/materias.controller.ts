@@ -17,18 +17,24 @@ export class MateriasController{
         return this.materiasService.getMaterias();
     }
 
-    //Obtener una materia por id
-    @Get(':id')
-    getMateriasId(@Param('id', ParseIntPipe) id: number): Promise<Materias>{
-        return this.materiasService.getMateriasId(id);
-    }
-
-
     //OBTENER MATERIAS POR GRADO ESCOLAR
     @Get('grado/:grado')
-    async getMateriasgRADO(@Param('grado', ParseIntPipe) grado: number): Promise<Materias[]>{
+    async getMateriasGrado(@Param('grado', ParseIntPipe) grado: number): Promise<Materias[]>{
         return await this.materiasService.getMateriasGrado(grado);
     }
+
+
+    //Obtener una materia por id
+    // @Get(':id')
+    // getMateriasId(@Param('id', ParseIntPipe) id: number): Promise<Materias>{
+    //     return this.materiasService.getMateriasId(id);
+    // }
+
+    //OBTENER MATERIAS POR GRUPO ESCOLAR
+    // @Get('grado/:grupo')
+    // async getMateriasgrupo(@Param('grupo') grupo: string): Promise<Materias[]>{
+    //     return await this.materiasService.getMateriasGrupo(grupo);
+    // }
 
 
     // Obtener un alumno por id

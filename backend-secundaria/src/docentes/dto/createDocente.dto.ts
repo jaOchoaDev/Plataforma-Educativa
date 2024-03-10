@@ -1,6 +1,6 @@
 import { Transform } from 'class-transformer';
 import { IsNumber, IsString, Min, MinLength, MaxLength, Max, IsEmpty, IsNotEmpty, IsInt } from 'class-validator';
-// import { Role } from 'src/common/enums/rol.enum';
+import { Role } from 'src/common/enums/rol.enum';
 
 export class CreateDocenteDto {
 
@@ -18,6 +18,7 @@ export class CreateDocenteDto {
     @MinLength(4)
     password: string;
 
+    //Esta se pone cuando se quiere agregar otro DOCENTE que no sea de rol profesor
     // @IsString()
     // rol: Role;
 

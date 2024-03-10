@@ -1,11 +1,11 @@
-import { Docentes } from "src/docentes/docentes.entity";
-import { Alumno } from "src/usuarios/usuarios.entity";
-import { Column, Entity, ManyToMany, PrimaryGeneratedColumn } from "typeorm";
+import { Docentes } from '../docentes/docentes.entity';
+import { Alumno } from '../usuarios/usuarios.entity';
+import { Column, Entity, JoinTable, ManyToMany, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity({name: 'materias'})
 export class Materias{
     @PrimaryGeneratedColumn()
-    id: number;
+    id_Materia: number;
 
     @Column()
     nombre_materia: string;
@@ -17,8 +17,10 @@ export class Materias{
     grado: number;
 
     @ManyToMany(() => Alumno, alumno => alumno.materias)
-    estudiante: Alumno
+    @JoinTable()
+    estudiantes: Alumno
 
     @ManyToMany(() => Docentes, profe => profe.materias)
+    @JoinTable()
     docentes: Docentes[]
 }

@@ -99,7 +99,7 @@ h2{
 
 .nom-taller {
     text-transform: uppercase;
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 800;
     color: var(--colorCopy);
     padding: 1rem 0 0 1rem;

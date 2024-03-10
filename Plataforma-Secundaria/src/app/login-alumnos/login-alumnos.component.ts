@@ -3,6 +3,8 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
 import * as jwt from 'jwt-decode';
+// import * as jwt from 'jwt-decode';
+// import * as jwtDecode from 'jwt-decode';
 
 @Component({
   selector: 'app-login-alumnos',
@@ -62,6 +64,7 @@ export class LoginAlumnosComponent {
         // console.log('grado del alumno:', g);
         
         console.log('Login Correcto:', response);
+        console.log('loggedIn: ', loggedin);
         this.loginForm.reset();
         
       }, error: err =>{

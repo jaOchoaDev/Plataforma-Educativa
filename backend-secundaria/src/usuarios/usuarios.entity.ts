@@ -1,42 +1,31 @@
 import { Entity, PrimaryGeneratedColumn, Column, ManyToMany, JoinTable } from 'typeorm';
 import { Materias } from 'src/materias/materias.entity';
 import { Role } from '../common/enums/rol.enum';
-// import { RolEntity } from 'src/rol/rol.entity';
 
 //Aquí se crea la tabla de alumnos en la bd
 @Entity({ name: 'alumnos' })
 export class Alumno {
   @PrimaryGeneratedColumn()
-  id: number;
-
+  id_alumno: number;
   @Column()
   nombre: string;
-
   @Column()
   apellido_paterno: string;
-
   @Column()
   apellido_materno: string;
-
   @Column({unique: true})
   usuario: string;
-
   @Column()
   password: string;
-
   @Column()
   grado: number;
-
   @Column()
   taller: string;
-  
   @Column()
   grupo: string;
-
   @Column({type: 'enum', default: Role.USER, enum: Role})
   rol: Role;
-
-  @ManyToMany(() => Materias, materia => materia.estudiante)
+  @ManyToMany(() => Materias, materia => materia.estudiantes)
   materias: Materias[]
 
   // @ManyToMany(type => RolEntity, rol => rol.alumnos, {eager: true})
@@ -47,3 +36,11 @@ export class Alumno {
   // })
   // roles: RolEntity[];
 }
+
+/* EL USUARIO ADMINISTRADOR, CON CREDENCIALES DE ALUMNO
+   USUARIO: JaviAdmin
+   PASSWORD: jA25 */
+
+   /* EL USUARIO ADMINISTRADOR, CON CREDENCIALES DE DOCENTE
+   USUARIO: Javier Ayala Ochoa Admin
+   PASSWORD: jAD25 */

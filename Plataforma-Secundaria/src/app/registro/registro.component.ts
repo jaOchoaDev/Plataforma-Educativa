@@ -15,39 +15,6 @@ import { Alumno } from '../models/alumno';
   styleUrls: ['./registro.component.css']
 })
 export class RegistroComponent implements OnInit{
-
-  //------------------------------------USANDO NGMODEL-----------------------------------
-  
-  //----------Double Binding con ngModel
-  // nombre = "";
-  // apellido_Paterno = "";
-  // apellido_Materno = "";
-  // usuario = "";
-  // contraseña = "";
-  // grado: number = null;
-  // taller = "";
-  // grupo = "";
-  
-  // constructor(private registroService: RegistroService, private router: Router){}
-  
-  // ngOnInit(): void {}
-
-// router.navigate sirve para redireccionar despues de una acción del form
-// this.router.navigate([])
-
-//Método paa registrar alumno usando ngModel
-  // onCreate(): void{
-  //   const registro = new Alumno(this.nombre, this.apellido_Paterno, this.apellido_Materno, this.usuario, this.contraseña, this.grado, this.taller, this.grupo);
-  //   this.registroService.registrar(registro).subscribe({
-  //     next: data =>{
-  //       console.log('Alumno Registrado', data);
-  //     }, error: err=>{
-  //       console.log('Problema de Registro', err);
-  //     }
-  //   });
-  // }
-
-
   //---------------------USANDO FORMGROUP------------------------------
 
   registerForm: FormGroup;
@@ -97,9 +64,12 @@ export class RegistroComponent implements OnInit{
       grupo: this.registerForm.value.grupo,
     }
     this.registroService.registrar(data).subscribe({
-      next: response=>{
+      next: (response: any)=>{
         console.log('Alumno Registrado', response);
-      }, error: err=>{
+        // window.confirm('Alumno Registrado');
+        window.alert('Alumno Registrado');
+        this.registerForm.reset();
+      }, error: (err: { error: any; })=>{
         console.log('Error de Registro', err);
         if (err.error) {
           console.log('Detalles del error:', err.error);

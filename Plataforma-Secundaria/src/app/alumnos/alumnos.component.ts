@@ -44,8 +44,8 @@ alumno: Alumno;
     console.log("La clave no existe en localStorage");
     }
 
-    this.alumnosService.getAlumno(this.usuario).subscribe(
-      (alumno) => {
+    this.alumnosService.getAlumno(this.usuario).subscribe({
+      next: (alumno) => {
         console.log('Datos del alumno:', alumno);
         // Aquí puedes manejar los datos del alumno
         this.alumno = alumno;
@@ -54,11 +54,24 @@ alumno: Alumno;
             console.log('Estas son las materias del chamaco', materias);
             this.materias = materias
           })
-      },
-      (error) => {
+      }, error: (error) => {
         console.error('Error al obtener el alumno:', error);
       }
-    );
+    });
+    //   (alumno) => {
+    //     console.log('Datos del alumno:', alumno);
+    //     // Aquí puedes manejar los datos del alumno
+    //     this.alumno = alumno;
+    //     this.materiasService.getMateriasGrado(this.alumno.grado).subscribe(
+    //       (materias) => {
+    //         console.log('Estas son las materias del chamaco', materias);
+    //         this.materias = materias
+    //       })
+    //   },
+    //   (error) => {
+    //     console.error('Error al obtener el alumno:', error);
+    //   }
+    // );
     
     console.log(this.alumno);
 

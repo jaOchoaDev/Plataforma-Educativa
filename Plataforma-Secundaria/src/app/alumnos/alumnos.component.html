@@ -4,11 +4,11 @@
 
         <div class="saludo">
             <!-- <h2>Bienvenido {{ alumno }}</h2> -->
-            <h2>Bienvenido</h2>
+            <h2>Bienvenido {{alumno.nombre}}</h2>
         </div>
 
         <div class="info" *ngIf="alumno">
-            <label for="alumno">Alumno: {{alumno.nombre}} {{alumno.apellido_paterno}} </label>
+            <label for="alumno">Alumno: {{alumno.nombre}} {{alumno.apellido_paterno}} {{alumno.apellido_materno}}</label>
             <label for="grado">Grado: {{alumno.grado}}</label>
             <label for="grupo">Grupo: {{alumno.grupo}}</label>
             <label for="taller">Taller: {{alumno.taller}}</label>
@@ -33,10 +33,16 @@
                 <img src="../../assets/img/alimentos.jpg" alt="Imagen de la tarjeta">
             </div>
             <div class="card-content">
+                <h2>{{materia.nombre_materia}}</h2>
+                <p>{{materia.docente}}</p>
+                <p class="grado">Grado: {{materia.grado}}</p>
+            </div>
+
+            <!-- <div class="card-content">
                 <h2>NOMBRE MATERIA: {{materia.nombre_materia}}</h2>
                 <p>Impartida por: {{materia.docente}}</p>
                 <p class="grado">Grado: {{materia.grado}}</p>
-            </div>
+            </div> -->
         </div>
 
 

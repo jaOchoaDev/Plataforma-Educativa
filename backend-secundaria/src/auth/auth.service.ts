@@ -21,15 +21,11 @@ export class AuthService {
         if(!user){
             user = await this.usersService.findOneDocente(usuario);
         }
-        //-----LOGICA PARA UE TAMBIÉN HAGA LOGIN DE DOCENTES
-
-
-        //--------------------.----------------
 
         //Si el usuario NO existe, manda la exception
         // console.log('user: ', user);
         if (!user) {
-            throw new HttpException('Usuario Incorrecto', HttpStatus.BAD_REQUEST);
+            throw new HttpException('Usuario No Existe', HttpStatus.BAD_REQUEST);
         }
 
         //Si el usuario existe pasa a comparar la contraseña entrante
@@ -38,7 +34,7 @@ export class AuthService {
         //si la contraseña es incorrecta, se manda la exception
         // console.log('isPasswordValid: ', isPasswordValid);
         if (!isPasswordValid) {
-            throw new HttpException('Contraseña incorrecta', HttpStatus.BAD_REQUEST);
+            throw new HttpException('Contraseña Incorrecta', HttpStatus.BAD_REQUEST);
         }
         console.log({success: 'Correcto'});
         //si la contraseña no es incorrecta pasa a generar el jwt

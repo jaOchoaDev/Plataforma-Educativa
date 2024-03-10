@@ -27,21 +27,6 @@ export class AuthController {
         console.log('datos recibidos del f al back: ', loginDto);        
         return this.authService.login(loginDto);
     }
-    // @Post('login')
-    // login(@Body() loginDto: LoginDto, @Request() req, @Response() res){
-    //     console.log('datos recibidos del f al back: ', loginDto);        
-    //     res.status(200).send();
-    //     return this.authService.login(loginDto);        
-    // }
-
-
-    // @Get('profile')
-    // @Roles(Role.ADMIN)
-    // @UseGuards(AuthGuard, RolesGuard)
-    // profile(
-    //     @Req() req: RequestWithUser){
-    //     return req.user;
-    // }
 
     //Usando 2 decoradores en uno solo(auth)
     @Get('profile')
@@ -58,5 +43,13 @@ export class AuthController {
         console.log('respuesta del activeuser: ', user);
         return this.authService.profile(user);        
     }
+
+    // @Get('profile')
+    // @Roles(Role.ADMIN)
+    // @UseGuards(AuthGuard, RolesGuard)
+    // profile(
+    //     @Req() req: RequestWithUser){
+    //     return req.user;
+    // }
 
 }

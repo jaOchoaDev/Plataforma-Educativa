@@ -14,18 +14,7 @@ export class UsuariosService {
               @InjectRepository(Docentes) private readonly docentesRepository: Repository<Docentes>
   ) {}
 
-  //otro metodo para crear alumnos usando asyn
-  // async createAlumnos(alumno: Alumno): Promise<Alumno>{
-  //   return await this.alumnoRepository.save(alumno);
-  // }
-
-  //Crear o agregar alumnos, el bueno
-  // createAlumnos(alumno: CreateAlumnoDto){
-
-  //Hash de la contraseña(example)
-  // const hash = await bcrypt.hash(password, saltOrRounds);
-
-  //este método también jala ---------------------usando actualmente
+  //MÉTODO PARA REGISTRAR ALUMNOS
   async create(createUserDto: CreateAlumnoDto) {
     //verificar que el usuario exista(o no) en la BD
     console.log(createUserDto);
@@ -36,23 +25,12 @@ export class UsuariosService {
     try {
       const hashedPassword = await bcrypt.hash(createUserDto.password, 10);
       createUserDto.password = hashedPassword;
-      // Resto de la lógica aquí
     } catch (error) {
       console.error('Error al hacer el hash de la contraseña:', error);
-      // Puedes lanzar una excepción o manejar el error de alguna manera
     }
-    
-    
     //Si el usuario no existe en la BD, lo registra
     return await this.alumnoRepository.save(createUserDto);
   }
-    
-    
-
-    //este si jala, es el bueno, sin async
-    // const newAlumno = this.alumnoRepository.create(alumno);
-    // return this.alumnoRepository.save(newAlumno);
-  // }
 
    //-----------------------------------------------------------------------------
   //ESTE MÉTODO ES PARA EL LOGIN O PARA BUSCAR

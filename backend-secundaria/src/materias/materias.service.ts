@@ -13,17 +13,25 @@ export class MateriasService{
         return this.materiasRepository.find();
     }
 
-    getMateriasId(id: number) {
-        return this.materiasRepository.findOne({
-            where: { id }
-        });
-    }
-
     async getMateriasGrado(grado: number) {
         console.log('entro aqui');
         return await this.materiasRepository.find({
             where: {grado}
         });
     }
+
+
+    // getMateriasId(id: number) {
+    //     return this.materiasRepository.findOne({
+    //         where: { id }
+    //     });
+    // }
+
+    // async getMateriasGrupo(grupo: string) {
+    //     console.log('entro aqui a sacar grupo');
+    //     return await this.materiasRepository.findOne({
+    //         where: {grupo}
+    //     });
+    // }
 
 }

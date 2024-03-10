@@ -1,5 +1,5 @@
 export interface Alumno {
-    id: number,
+    id?: number,
     nombre: string,
     apellido_paterno: string,
     apellido_materno: string,

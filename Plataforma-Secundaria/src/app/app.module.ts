@@ -11,7 +11,7 @@ import { TalleresComponent } from './talleres/talleres.component';
 // import { LoginPersonalComponent } from './login-personal/login-personal.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { UbicacionComponent } from './ubicacion/ubicacion.component';
-import {GoogleMapsModule } from '@angular/google-maps';
+// import {GoogleMapsModule } from '@angular/google-maps';
 
 import { MaterialModule } from './material.module';
 // import { ModalComponent } from './login-personal/modal/modal.component';
@@ -73,7 +73,7 @@ import { LoginDocentesComponent } from './login-docentes/login-docentes.componen
     BrowserModule,
     ReactiveFormsModule,
     FormsModule,
-    GoogleMapsModule,
+    // GoogleMapsModule,
     BrowserAnimationsModule,
     MaterialModule,
     AppRoutingModule,

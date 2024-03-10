@@ -19,9 +19,14 @@ import { Materias } from "../models/materias";
 
     // Obtiene materias por grado
     getMateriasGrado( grado:number ): Observable<any>{
-
       const urlMateriasxGrado: string = `http://localhost:3000/materias/grado/${grado}`;
         return this.http.get<Materias[]>(urlMateriasxGrado).pipe(map(res => res));
+    }
+
+    // Obtiene materias por grupo
+    getMateriasGrupo( grupo:string ): Observable<any>{
+      const urlMateriasxGrupo: string = `http://localhost:3000/materias/grado/${grupo}`;
+        return this.http.get<Materias[]>(urlMateriasxGrupo).pipe(map(res => res));
     }
 
   }
